@@ -138,7 +138,7 @@ const orders={A:['existing','proposal'],B:['proposal','existing']};
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
 let session=null,stage='intro',idx=0,page='general',memoryOpen=false,learning=true,clicks=0,startAt=0,startISO='',timer=null,completed=false,away=0,hiddenAt=null,lastRecord=null;
 const tasks=[
- {id:'memory',title:'생성형 AI서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.',lead:'생성형 AI 서비스가 <u>나에 대해 기억하고 있는 내용</u>을 확인해주세요.',instruction:'생성형 AI 서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.'},
+ {id:'memory',title:'생성형 AI서비스가 나에 대해 기억하고 있는<br>내용을 확인해주세요.',lead:'생성형 AI 서비스가 <u>나에 대해 기억하고 있는 내용</u>을 확인해주세요.',instruction:'생성형 AI 서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.'},
  {id:'learning',title:'내 대화가 AI 모델 학습에 쓰이지 않게 하기',lead:'앞으로 하는 대화가 <u>AI 학습에 쓰이지 않도록</u> 설정을 바꿔보세요.',instruction:'앞으로 입력하는 채팅이 모델 학습에 사용되지 않도록 설정해주세요.'}
 ];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
