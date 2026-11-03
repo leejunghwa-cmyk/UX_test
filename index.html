@@ -43,6 +43,7 @@ body:has(.intro-wrap) .footer{display:none}
 .brief-inst u{text-decoration-thickness:2px;text-underline-offset:5px}
 .brief-desc{font-size:16px;margin:50px 0 14px;letter-spacing:-.03em}
 .brief .hint{max-width:586px;margin:0 auto}
+.brief-btns{margin-top:44px}
 
 /* 평가 폼 */
 .q{display:block;font-size:16px;font-weight:600;letter-spacing:-.03em;margin:28px 0 10px}
@@ -57,7 +58,9 @@ textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border
 textarea{min-height:100px;resize:vertical}
 
 /* 결과 화면 */
-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}td,th{padding:12px 8px;text-align:left;border-bottom:1px solid #e5e5e5}th{font-weight:600}
+.rq{margin-top:26px}
+.qrow{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}.qrow .q{margin:0}.qrow.qhead{padding:14px 0 4px;border-bottom:1px solid #eee}.qrow.qhead .under{margin:0;font-weight:600;color:#555}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}td,th{padding:9px 8px;text-align:left;border-bottom:1px solid #e5e5e5}th{font-weight:600}
 
 /* 과제 수행 화면 */
 .progress{height:4px;background:#d6d6d6}.progress i{display:block;height:100%;background:var(--blue)}
@@ -238,6 +241,33 @@ body:has(.intro-wrap){background:#f3f4f6}
 .textlink:hover{color:#000}
 .intro-card .error{margin-top:12px;text-align:center}
 
+/* PC: 과제 수행 화면은 창 높이에 고정하고, 설정 영역 안에서만 스크롤 */
+@media(min-width:761px){
+body:has(.workspace){height:100svh;overflow:hidden}
+body:has(.workspace) #app{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+body:has(.workspace) .footer{display:none}
+body:has(.workspace) .workspace{flex:1;min-height:0}
+.workspace>.sidebar,.workspace>.content,.workspace>.psb,.workspace>.pmain{overflow:auto;min-height:0}
+}
+/* 노트북처럼 화면 높이가 낮을 때: 안내·평가·설문·결과 화면을 한 화면에 맞춤 */
+@media(min-width:761px) and (max-height:920px){
+.footer{padding:10px 20px 14px;font-size:12px}
+.page{padding:22px 20px 8px}.page.center{min-height:calc(100svh - 60px - 46px)}
+.brief{padding:26px 40px 28px}.screen-pill{margin-bottom:10px;font-size:16px}.screen-pill .sq{width:42px;height:42px;font-size:23px}
+.meta{font-size:15px}.brief .badge{margin:6px 0 12px;padding:4px 12px;font-size:14px}
+.brief-title{font-size:30px;margin-bottom:6px}.brief-inst{font-size:17px;line-height:1.65}
+.brief-desc{margin:24px 0 8px;font-size:15px}.hint{font-size:13px}
+.btns{margin-top:24px}.btn{height:44px}.btns.left{margin-top:18px}
+.panel{padding:26px 40px}.ptitle{font-size:24px;margin:8px 0 2px}.psub{font-size:14px;margin-bottom:2px}
+.q{margin:14px 0 6px;font-size:15px}.scale span{padding:6px 0}.under{margin-top:3px}
+textarea{min-height:64px;padding:10px 12px}.choice{gap:6px}.choice span{padding:8px 14px}
+table{font-size:13px;margin-top:8px}td,th{padding:7px 8px}
+.taskbar{padding:12px 220px}.taskbar p{font-size:18px;margin-top:6px}.tb-screen .sq{width:40px;height:40px;font-size:22px}
+}
+@media(min-width:761px) and (max-height:720px){
+.footer{padding:6px 20px 8px}.qrow{padding:6px 0}.page.wide .panel{padding-top:18px}.rq{margin-top:10px}td,th{padding:5px 8px}#savestate{margin:6px 0 0!important}.brief-desc{margin-top:16px}.brief-title{font-size:27px}.panel{padding:20px 36px}.q{margin:10px 0 5px}.ptitle{font-size:22px}
+.screen-pill{margin-bottom:6px}.screen-pill .sq{width:36px;height:36px;font-size:20px}
+}
 /* 노트북처럼 화면 높이가 낮을 때 시작 화면을 한 화면에 맞춤 */
 @media(min-width:761px) and (max-height:920px){
 .intro-wrap{padding:28px 40px 32px;min-height:calc(100svh - 60px)}
@@ -260,7 +290,7 @@ body:has(.intro-wrap){background:#f3f4f6}
 .top{padding:0 20px;font-size:12px}
 .intro-wrap{padding:36px 20px}.intro-hero{grid-template-columns:1fr;gap:32px}.intro-copy h1{font-size:32px}.intro-description{font-size:17px}.intro-description br{display:none}.stepper li{font-size:13px}.facts{font-size:14px}.facts li+li{margin-left:12px;padding-left:12px}.pre-card{padding:20px}.pre-row{flex-wrap:wrap;gap:8px 12px}.intro-card{padding:26px 22px}.intro-card h2{font-size:28px}
 .page{padding:28px 16px 12px}.panel,.brief{padding:28px 22px}.brief .badge{margin-top:32px}.brief-title{font-size:27px}.brief-inst{font-size:17px}.brief-desc{font-size:14px;margin-top:40px}.brief-desc br{display:none}.btns{margin-top:36px}.btn{flex:1;min-width:0;font-size:14px}.ptitle{font-size:24px}
-.taskbar{padding:14px}.tb-screen{position:static;transform:none;justify-content:center;margin-bottom:8px}.tb-right{position:static;transform:none;justify-content:center;margin-top:10px}.tb-right .btn{flex:0 0 auto}.taskbar p{font-size:17px}.workspace{grid-template-columns:150px 1fr}.content{padding:25px 16px}.cards{grid-template-columns:1fr}.scale{gap:4px}
+.qrow{grid-template-columns:1fr;gap:8px}.taskbar{padding:14px}.tb-screen{position:static;transform:none;justify-content:center;margin-bottom:8px}.tb-right{position:static;transform:none;justify-content:center;margin-top:10px}.tb-right .btn{flex:0 0 auto}.taskbar p{font-size:17px}.workspace{grid-template-columns:150px 1fr}.content{padding:25px 16px}.cards{grid-template-columns:1fr}.scale{gap:4px}
 }
 </style></head>
 <body><header class="top"><div>AI 데이터 관리 UX 비교 테스트</div><div>UX 디자인 연구</div></header><div id="app"></div><div id="modal"></div><footer class="footer">가상 데이터로 진행하는 연구용 프로토타입입니다. 실제 ChatGPT 계정에는 영향을 주지 않습니다.</footer>
@@ -321,13 +351,13 @@ app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="
 <p class="intro-foot">실제 계정이나 데이터에는 영향을 주지 않습니다.</p></section>
 <section class="intro-card"><h2>테스트 시작</h2><p class="card-sub">안내받은 참여자 코드를 입력해 주세요.</p><label class="code-label" for="code">참여자 코드</label><input id="code" type="text" maxlength="30" placeholder="예: P01" autocomplete="off">
 <div class="rec"><b>기록되는 정보</b><p>참여자 코드, 화면 제시 순서, 과제 시간, 클릭 수, 완료 여부, 탭 이탈 시간, 평가 응답</p><small>${storeNote}</small></div>
-<label class="consent-label"><input id="consent" type="checkbox"><span><b>안내 내용을 확인했으며 테스트에 참여합니다.</b><small>언제든 참여를 중단할 수 있습니다. 화면 녹화는 하지 않습니다.</small></span></label>
+<label class="consent-label"><input id="consent" type="checkbox"><span><b>안내 내용을 확인했으며 자발적으로 참여합니다.</b><small>언제든 참여를 중단할 수 있습니다. 화면 녹화는 하지 않습니다.</small></span></label>
 <button class="btn primary wide" id="begin">동의하고 시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="textlink" id="resume">이전 기록 보기</button><div id="error" class="error" role="alert"></div></section></div></main>`;
 document.querySelector('#begin').onclick=()=>{const code=document.querySelector('#code').value.trim();if(!code||!document.querySelector('#consent').checked){document.querySelector('#error').textContent='참여자 코드와 참여 동의를 확인해 주세요.';return}const go=()=>{const studyType=assignType(code);session={version:VERSION,id:typeof crypto.randomUUID==='function'?crypto.randomUUID():'session-'+Date.now()+'-'+Array.from(crypto.getRandomValues(new Uint32Array(2))).join('-'),code,studyType,order:[...orders[studyType]],createdAt:new Date().toISOString(),userAgent:navigator.userAgent,screen:innerWidth+'x'+innerHeight,records:[],surveys:[],outbox:[...((old&&old.outbox)||[])],active:null,status:'in_progress',storage:ENDPOINT?'remote_sheet+browser':'browser_local_only'};idx=0;persist();send('start',{createdAt:session.createdAt,userAgent:session.userAgent,screen:session.screen});brief()};if(old)showConfirm({title:'새로 시작할까요?',body:'이 브라우저에 남아 있는 이전 기록이<br>새 참여 기록으로 바뀝니다.',ok:'새로 시작하기',cancel:'취소',onOk:go});else go()};
 document.querySelector('#resume').onclick=()=>{if(!old){document.querySelector('#error').textContent='이 브라우저에 저장된 이전 기록이 없습니다.';return}session=old;results()}}
 
 function brief(){window.scrollTo(0,0);stage='brief';page=condition()==='existing'?'general':'summary';pReset();learning=true;memItems=MEM_BASE.map(m=>({...m}));memoryOpen=false;completed=false;const t=task();
-app.innerHTML=`<main class="page center"><section class="panel brief"><div class="screen-pill"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="meta">${ADMIN?esc(session.studyType)+'유형<i>|</i>':''}TASK ${idx+1}/${TOTAL}</div><span class="badge">${idx%PER+1}번째 과제</span><h1 class="brief-title">${t.title}</h1><p class="brief-inst">${t.lead}</p><p class="brief-desc">‘시작하기’를 누르면 화면이 열리고 시간 측정이 시작됩니다.<br>목표 동작을 수행하면 시간 측정이 종료됩니다. 수행하기 어려우면 ‘과제 중단’을 선택해 주세요.</p><div class="hint">화면 속 모든 내용은 테스트용 가상 데이터입니다. 과제마다 설정과 시작 위치가 초기화됩니다.</div><div class="btns"><button class="btn primary" id="start">시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="btn" id="exit">기록 저장 후 나가기</button></div></section></main>`;
+app.innerHTML=`<main class="page center"><section class="panel brief"><div class="screen-pill"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="meta">${ADMIN?esc(session.studyType)+'유형<i>|</i>':''}TASK ${idx+1}/${TOTAL}</div><span class="badge">${idx%PER+1}번째 과제</span><h1 class="brief-title">${t.title}</h1><p class="brief-inst">${t.lead}</p><div class="btns brief-btns"><button class="btn primary" id="start">시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="btn" id="exit">기록 저장 후 나가기</button></div></section></main>`;
 document.querySelector('#start').onclick=startTask;document.querySelector('#exit').onclick=results}
 
 function startTask(){stage='task';clicks=0;errors=0;away=0;hiddenAt=null;startAt=performance.now();startISO=new Date().toISOString();session.active={index:idx,startedAt:startISO};persist();renderTask();clearInterval(timer);timer=setInterval(()=>{const el=document.querySelector('#clock');if(el&&!completed)el.textContent=((performance.now()-startAt)/1000).toFixed(1)+'초'},100)}
@@ -501,15 +531,15 @@ function finishTask(outcome,keepOpen=false){if(completed)return;completed=true;c
 function afterTask(){window.scrollTo(0,0);stage='taskdone';document.querySelector('#nextbar')?.remove();
 app.innerHTML=`<main class="page"><section class="panel"><span class="badge">${lastRecord.outcome==='success'?'과제 완료':'과제 중단'}</span><h2 class="ptitle">수행 경험을 알려주세요</h2><p class="psub">화면 ${scr()} · TASK ${idx+1}/${TOTAL} · ${task().title}</p><form id="taskform"><p class="q">이 과제를 수행하는 것은 얼마나 쉬웠나요?</p>${scale('ease',7,'매우 어려움','매우 쉬움')}<label class="q" for="comment">어렵거나 혼란스러운 부분이 있었다면 적어주세요. <small>(선택)</small></label><textarea id="comment" maxlength="2000"></textarea><div class="btns left"><button class="btn primary">다음으로 <i class="fa-solid fa-arrow-right"></i></button></div></form></section></main>`;
 document.querySelector('#taskform').onsubmit=e=>{e.preventDefault();lastRecord.ease=Number(new FormData(e.target).get('ease'));lastRecord.comment=document.querySelector('#comment').value;persist();send('task',lastRecord);if(idx%PER===PER-1)survey();else{idx++;brief()}}}
-function scale(name,n,left,right){return `<div class="scale">${Array.from({length:n},(_,i)=>`<label><input required type="radio" name="${name}" value="${i+1}"><span>${i+1}</span></label>`).join('')}</div><div class="under"><span>${left}</span><span>${right}</span></div>`}
+function scale(name,n,left,right,noUnder){return `<div class="scale">${Array.from({length:n},(_,i)=>`<label><input required type="radio" name="${name}" value="${i+1}" aria-label="${i+1}점 (${left} 1 ~ ${right} ${n})"><span>${i+1}</span></label>`).join('')}</div>${noUnder?'':`<div class="under"><span>${left}</span><span>${right}</span></div>`}`}
 function survey(){window.scrollTo(0,0);stage='survey';
-app.innerHTML=`<main class="page"><section class="panel"><div class="screen-pill"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="meta">화면 ${scr()}<i>|</i>사용 후 평가</div><h2 class="ptitle">방금 사용한 화면 ${scr()}에 대해 답해주세요</h2><p class="psub">방금 사용한 화면에서의 경험을 기준으로 응답해 주세요.</p><form id="survey">${['내 정보가 어디에 저장되어 있는지 파악하기 쉬웠다.','개인화와 모델 학습 설정의 차이를 이해할 수 있었다.','원하는 방식으로 데이터 활용 설정을 조절할 수 있다고 느꼈다.','내가 변경한 설정이 적용되었는지 확인하기 쉬웠다.','원하지 않는 기억을 선택해서 삭제할 수 있다고 느꼈다.'].map((q,i)=>`<p class="q">${i+1}. ${q}</p>${scale('q'+i,5,'전혀 그렇지 않다','매우 그렇다')}`).join('')}<div class="btns left"><button class="btn primary">${idx===TOTAL-1?'다음으로 <i class="fa-solid fa-arrow-right"></i>':'화면 B로 넘어가기 <i class="fa-solid fa-arrow-right"></i>'}</button></div></form></section></main>`;
+app.innerHTML=`<main class="page wide"><section class="panel"><div class="screen-pill"><span class="sq">${scr()}</span>화면 ${scr()} · 사용 후 평가</div><h2 class="ptitle">방금 사용한 화면 ${scr()}에 대해 답해주세요</h2><p class="psub">방금 사용한 화면에서의 경험을 기준으로 응답해 주세요.</p><form id="survey"><div class="qrow qhead"><span></span><div class="under"><span>1 전혀 그렇지 않다</span><span>매우 그렇다 5</span></div></div>${['내 정보가 어디에 저장되어 있는지 파악하기 쉬웠다.','개인화와 모델 학습 설정의 차이를 이해할 수 있었다.','원하는 방식으로 데이터 활용 설정을 조절할 수 있다고 느꼈다.','내가 변경한 설정이 적용되었는지 확인하기 쉬웠다.','원하지 않는 기억을 선택해서 삭제할 수 있다고 느꼈다.'].map((q,i)=>`<div class="qrow"><p class="q">${i+1}. ${q}</p><div>${scale('q'+i,5,'전혀 그렇지 않다','매우 그렇다',true)}</div></div>`).join('')}<div class="btns left"><button class="btn primary">${idx===TOTAL-1?'다음으로 <i class="fa-solid fa-arrow-right"></i>':'화면 B로 넘어가기 <i class="fa-solid fa-arrow-right"></i>'}</button></div></form></section></main>`;
 document.querySelector('#survey').onsubmit=e=>{e.preventDefault();const entry={condition:condition(),answers:Object.fromEntries(new FormData(e.target))};session.surveys.push(entry);send('survey',entry);if(idx===TOTAL-1){persist();finalQ()}else{idx++;persist();brief()}}}
 function finalQ(){window.scrollTo(0,0);stage='final';
 app.innerHTML=`<main class="page"><section class="panel"><div class="meta">마지막 질문</div><h2 class="ptitle">두 화면을 비교해 주세요</h2><p class="psub">두 화면을 모두 사용한 경험을 기준으로 응답해 주세요.</p><form id="finalform"><p class="q">1. 화면 A와 화면 B 중 어느 화면이 더 편리했나요?</p><div class="choice">${[['A','화면 A (처음 사용한 화면)'],['B','화면 B (두 번째로 사용한 화면)'],['same','비슷했다']].map(([v,l])=>`<label><input required type="radio" name="preferred" value="${v}"><span>${l}</span></label>`).join('')}</div><label class="q" for="reason">2. 그렇게 느낀 이유는 무엇인가요?</label><textarea id="reason" name="reason" maxlength="2000" required></textarea><div class="btns left"><button class="btn primary">테스트 완료</button></div></form></section></main>`;
 document.querySelector('#finalform').onsubmit=e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));session.final={preferred:f.preferred,preferredCondition:f.preferred==='A'?session.order[0]:f.preferred==='B'?session.order[1]:'same',reason:f.reason};send('final',session.final);session.status='completed';session.completedAt=new Date().toISOString();persist();send('complete',snapshot());results()}}
 function results(){window.scrollTo(0,0);clearInterval(timer);stage='results';modal.innerHTML='';const interrupted=!!session.active;const done=session.status==='completed';
-app.innerHTML=`<main class="page wide"><section class="panel"><div class="meta">SESSION RECORD</div><h2 class="ptitle">${done?'테스트를 모두 마쳤습니다.':'현재 기록을 확인하세요.'}</h2><div class="hint" id="savestate" style="margin:14px 0 6px"></div>${interrupted?'<p class="error">화면 새로고침 또는 종료로 중단된 과제가 있습니다. 해당 과제는 완료 시간으로 계산하지 않았습니다.</p>':''}<p class="q" style="margin-top:30px">참여자 ${esc(session.code)}${ADMIN?` · ${session.studyType?esc(session.studyType)+'유형':'이전 버전 기록'} · ${session.order.map((v,i)=>'화면 '+'AB'[i]+'='+(v==='existing'?'기존':'제안')).join(', ')}`:''}</p><div style="overflow:auto"><table><thead><tr><th>화면</th><th>과제</th><th>경과 시간</th><th>클릭</th><th>탭 이탈</th><th>결과</th></tr></thead><tbody>${session.records.map(r=>`<tr><td>화면 ${scr(r.index)}${ADMIN?(r.condition==='existing'?' (기존)':' (제안)'):''}</td><td>${TASK_LABEL[r.task]||esc(r.task)}</td><td>${(r.elapsedMs/1000).toFixed(2)}초</td><td>${r.clicks}</td><td>${(r.hiddenMs/1000).toFixed(2)}초</td><td>${r.outcome==='success'?'완료':'중단'}</td></tr>`).join('')}</tbody></table></div>${ADMIN?'<p class="psub" style="margin-top:14px;font-size:13px">A유형은 기존 → 제안, B유형은 제안 → 기존 순서입니다. 두 유형의 과제와 설문은 동일합니다.</p>':''}<div class="btns left"><button class="btn primary" id="retry" hidden>다시 시도</button><button class="btn" id="csv" hidden>과제 결과 CSV</button><button class="btn" id="json" hidden>전체 응답 JSON</button><button class="btn" id="home">처음으로</button></div><p id="storage-error" class="error" role="alert"></p></section></main>`;
+app.innerHTML=`<main class="page wide"><section class="panel"><div class="meta">SESSION RECORD</div><h2 class="ptitle">${done?'테스트를 모두 마쳤습니다.':'현재 기록을 확인하세요.'}</h2><div class="hint" id="savestate" style="margin:14px 0 6px"></div>${interrupted?'<p class="error">화면 새로고침 또는 종료로 중단된 과제가 있습니다. 해당 과제는 완료 시간으로 계산하지 않았습니다.</p>':''}<p class="q rq">참여자 ${esc(session.code)}${ADMIN?` · ${session.studyType?esc(session.studyType)+'유형':'이전 버전 기록'} · ${session.order.map((v,i)=>'화면 '+'AB'[i]+'='+(v==='existing'?'기존':'제안')).join(', ')}`:''}</p><div style="overflow:auto"><table><thead><tr><th>화면</th><th>과제</th><th>경과 시간</th><th>클릭</th><th>탭 이탈</th><th>결과</th></tr></thead><tbody>${session.records.map(r=>`<tr><td>화면 ${scr(r.index)}${ADMIN?(r.condition==='existing'?' (기존)':' (제안)'):''}</td><td>${TASK_LABEL[r.task]||esc(r.task)}</td><td>${(r.elapsedMs/1000).toFixed(2)}초</td><td>${r.clicks}</td><td>${(r.hiddenMs/1000).toFixed(2)}초</td><td>${r.outcome==='success'?'완료':'중단'}</td></tr>`).join('')}</tbody></table></div>${ADMIN?'<p class="psub" style="margin-top:14px;font-size:13px">A유형은 기존 → 제안, B유형은 제안 → 기존 순서입니다. 두 유형의 과제와 설문은 동일합니다.</p>':''}<div class="btns left"><button class="btn primary" id="retry" hidden>다시 시도</button><button class="btn" id="csv" hidden>과제 결과 CSV</button><button class="btn" id="json" hidden>전체 응답 JSON</button><button class="btn" id="home">처음으로</button></div><p id="storage-error" class="error" role="alert"></p></section></main>`;
 document.querySelector('#csv').onclick=()=>download('csv');document.querySelector('#json').onclick=()=>download('json');document.querySelector('#retry').onclick=updateSave;document.querySelector('#home').onclick=intro;updateSave()}
 /* 저장 상태 레이어 팝업: 저장 중에는 닫을 수 없고, 끝나면 결과를 알려 줍니다 */
 function saveLayer(state){let l=document.querySelector('#savelayer');if(!l){l=document.createElement('div');l.id='savelayer';l.className='layer';document.body.appendChild(l)}
