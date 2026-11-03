@@ -129,7 +129,9 @@ const KEY='ai-data-ux-pilot-v1',VERSION='0.3.0';
               ② 없으면 참여자 코드 숫자로 배정 (홀수 P01·P03… → A, 짝수 P02·P04… → B)
               ③ 코드에 숫자가 없으면 무작위                                            */
 const assignedType=new URLSearchParams(location.search).get('type')?.toUpperCase();
-const fixedType=['A','B'].includes(assignedType)?assignedType:null;
+const fixedType=['A','B'].includes(assignedType)?assignedType:null; 
+/* 연구자 보기: 주소 끝에 ?admin=1 을 붙이면 결과 화면에 백업 다운로드 버튼이 보입니다 */
+const ADMIN=new URLSearchParams(location.search).has('admin');
 function assignType(code){if(fixedType)return fixedType;const n=parseInt(code.replace(/\D/g,''),10);if(!Number.isNaN(n))return n%2===1?'A':'B';return Math.random()<.5?'A':'B'}
 const orders={A:['existing','proposal'],B:['proposal','existing']};
 
