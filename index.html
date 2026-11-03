@@ -134,8 +134,8 @@ const orders={A:['existing','proposal'],B:['proposal','existing']};
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
 let session=null,stage='intro',idx=0,page='general',memoryOpen=false,learning=true,clicks=0,startAt=0,startISO='',timer=null,completed=false,away=0,hiddenAt=null,lastRecord=null;
 const tasks=[
- {id:'memory',title:'대화 내용에서 기억된 내용 확인하기',lead:'생성형 AI 서비스가 <u>나에 대해 기억하고 있는 내용</u>을 확인해주세요.',instruction:'생성형 AI 서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.'},
- {id:'learning',title:'모델 학습 사용 중지하기',lead:'앞으로 입력하는 채팅이 <u>모델 학습에 사용되지 않도록</u> 설정해주세요.',instruction:'앞으로 입력하는 채팅이 모델 학습에 사용되지 않도록 설정해주세요.'}
+ {id:'memory',title:'생성형 AI서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.',lead:'생성형 AI 서비스가 <u>나에 대해 기억하고 있는 내용</u>을 확인해주세요.',instruction:'생성형 AI 서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.'},
+ {id:'learning',title:'내 대화가 AI 모델 학습에 쓰이지 않게 하기',lead:'앞으로 하는 대화가 <u>AI 학습에 쓰이지 않도록</u> 설정을 바꿔보세요.',instruction:'앞으로 입력하는 채팅이 모델 학습에 사용되지 않도록 설정해주세요.'}
 ];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function saved(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch{return null}}
@@ -150,7 +150,7 @@ document.querySelector('#begin').onclick=()=>{const code=document.querySelector(
 document.querySelector('#resume').onclick=()=>{if(!old){document.querySelector('#error').textContent='이 브라우저에 저장된 이전 기록이 없습니다.';return}session=old;results()}}
 
 function brief(){window.scrollTo(0,0);stage='brief';page=condition()==='existing'?'general':'overview';learning=true;memoryOpen=false;completed=false;const t=task();
-app.innerHTML=`<main class="page center"><section class="panel brief"><div class="meta">${esc(session.studyType)}유형<i>|</i>TASK ${idx+1}/4<i>|</i>화면 ${Math.floor(idx/2)+1}</div><span class="badge">${idx%2+1}번째 과제</span><h1 class="brief-title">${t.title}</h1><p class="brief-inst">${t.lead}</p><p class="brief-desc">시작 버튼을 누르면 화면이 열리고 시간 측정이 시작됩니다.<br>목표 동작을 수행하면 측정이 자동으로 종료됩니다. 찾기 어려우면 ‘과제 중단’을 선택할 수 있습니다.</p><div class="hint">모든 내용은 테스트용 가상 데이터입니다. 과제마다 설정과 시작 위치가 초기화됩니다.</div><div class="btns"><button class="btn primary" id="start">시작하기 &gt;</button><button class="btn" id="exit">기록 저장 후 나가기</button></div></section></main>`;
+app.innerHTML=`<main class="page center"><section class="panel brief"><div class="meta">${esc(session.studyType)}유형<i>|</i>TASK ${idx+1}/4<i>|</i>화면 ${Math.floor(idx/2)+1}</div><span class="badge">${idx%2+1}번째 과제</span><h1 class="brief-title">${t.title}</h1><p class="brief-inst">${t.lead}</p><p class="brief-desc">'시작하기'를 누르면 화면이 열리고 시간을 재기 시작해요.<br>찾으면 자동으로 끝나요. 잘 모르겠으면 '과제 중단'을 눌러도 괜찮아요.</p><div class="hint">화면 속 모든 내용은 테스트용 가상 데이터입니다. 과제마다 설정과 시작 위치가 초기화됩니다.</div><div class="btns"><button class="btn primary" id="start">시작하기 &gt;</button><button class="btn" id="exit">기록 저장 후 나가기</button></div></section></main>`;
 document.querySelector('#start').onclick=startTask;document.querySelector('#exit').onclick=results}
 
 function startTask(){stage='task';clicks=0;away=0;hiddenAt=null;startAt=performance.now();startISO=new Date().toISOString();session.active={index:idx,startedAt:startISO};persist();renderTask();clearInterval(timer);timer=setInterval(()=>{const el=document.querySelector('#clock');if(el&&!completed)el.textContent=((performance.now()-startAt)/1000).toFixed(1)+'초'},100)}
