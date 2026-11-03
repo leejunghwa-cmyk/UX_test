@@ -37,7 +37,8 @@ body:has(.intro-wrap) .footer{display:none}
 .brief{text-align:center;padding:40px 48px 44px}
 .brief .badge{margin:52px 0 18px}
 .brief-title{font-size:36px;font-weight:700;letter-spacing:-.045em;line-height:1.3;margin:0 0 12px}
-.brief-inst{font-size:22px;font-weight:600;letter-spacing:-.04em;line-height:1.5;margin:0}
+.brief-inst{font-size:19px;font-weight:500;letter-spacing:-.035em;line-height:1.75;margin:0;color:#222}
+.brief-inst u{font-weight:700;color:#000}
 .brief-inst u{text-decoration-thickness:2px;text-underline-offset:5px}
 .brief-desc{font-size:16px;margin:68px 0 14px;letter-spacing:-.03em}
 .brief .hint{max-width:586px;margin:0 auto}
@@ -145,10 +146,10 @@ const orders={A:['existing','proposal'],B:['proposal','existing']};
 const app=document.querySelector('#app'),modal=document.querySelector('#modal');
 let session=null,stage='intro',idx=0,page='general',memoryOpen=false,learning=true,clicks=0,errors=0,startAt=0,startISO='',timer=null,completed=false,away=0,hiddenAt=null,lastRecord=null;
 const tasks=[
- {id:'memory',title:'생성형 AI서비스가 나에 대해 기억하고 있는<br>내용을 확인해주세요.',lead:'생성형 AI 서비스가 <u>나에 대해 기억하고 있는 내용</u>을 확인해주세요.',instruction:'생성형 AI 서비스가 나에 대해 기억하고 있는 내용을 확인해주세요.'},
- {id:'learning',title:'내 대화가 AI 모델 학습에 쓰이지 않게 하기',lead:'앞으로 하는 대화가 <u>AI 학습에 쓰이지 않도록</u> 설정을 바꿔보세요.',instruction:'앞으로 입력하는 채팅이 모델 학습에 사용되지 않도록 설정해주세요.'},
- {id:'files',title:'업로드한 파일 찾기',lead:'업로드한 파일 중 <u>‘서비스개선_기획안.pdf’</u>를 찾아 열어보세요.',instruction:'업로드한 파일 중 ‘서비스개선_기획안.pdf’를 찾아 열어보세요.'},
- {id:'forget',title:'특정 기억 지우기',lead:'AI가 기억하는 내용 중 <u>‘발표 자료를 준비하고 있다’는 정보</u>를 지워보세요.',instruction:'AI가 기억하는 내용 중 ‘발표 자료를 준비하고 있다’는 정보를 지워보세요.'}
+ {id:'memory',title:'기억된 내용 확인하기',lead:'생성형 AI 서비스는 대화하면서 알게 된 내 정보를 기억해 두고 답변에 활용합니다.<br>이 서비스가 <u>나에 대해 어떤 내용을 기억하고 있는지</u> 찾아서 확인해 주세요.',instruction:'이 서비스가 나에 대해 어떤 내용을 기억하고 있는지 찾아서 확인해 주세요.'},
+ {id:'learning',title:'모델 학습에 쓰이지 않게 설정하기',lead:'내가 입력한 대화는 AI 모델을 더 좋게 만드는 학습에 쓰일 수 있습니다.<br>앞으로 입력하는 대화가 <u>모델 학습에 사용되지 않도록</u> 설정을 바꿔 주세요.',instruction:'앞으로 입력하는 대화가 모델 학습에 사용되지 않도록 설정을 바꿔 주세요.'},
+ {id:'files',title:'업로드한 파일 찾기',lead:'대화 중에 올린 파일은 서비스 안에 그대로 남아 있습니다.<br>그중 <u>‘서비스개선_기획안.pdf’</u> 파일을 찾아서 열어 주세요.',instruction:'업로드한 파일 중 ‘서비스개선_기획안.pdf’ 파일을 찾아서 열어 주세요.'},
+ {id:'forget',title:'특정 기억 지우기',lead:'발표 준비가 끝나서, AI가 이 내용을 더 이상 기억하지 않았으면 합니다.<br>기억된 내용 중 <u>‘발표 자료를 준비하고 있다’</u>는 항목만 골라서 지워 주세요.',instruction:'기억된 내용 중 ‘발표 자료를 준비하고 있다’는 항목만 골라서 지워 주세요.'}
 ];
 /* 화면당 과업 수(PER)와 전체 과업 수(TOTAL)는 tasks 개수로 자동 계산됩니다 */
 const PER=tasks.length,TOTAL=PER*2;
