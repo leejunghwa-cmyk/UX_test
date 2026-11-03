@@ -423,7 +423,7 @@ function pHistory(){
  <div class="pgrid"><div class="pbox"><div class="phtable"><div class="phth"><span>일시</span><span>행동 · 대상</span><span>상태</span></div>${list.length?list.map(({h,i})=>`<button class="phtr ${cur===h?'sel':''}" data-act="hpick" data-i="${i}"><span><b>${fmtHist(h.date).slice(6)}</b><small>${h.sample?'예시 기록':'이번 과제'}</small></span><span><b>${h.title}</b><small>${h.sub}</small></span><span>${pHistBadge(h)}</span></button>`).join(''):'<div class="pempty">해당하는 기록이 없습니다.</div>'}<div class="plfoot">${list.length}건의 기록</div></div></div>
  <div class="pbox pdetail">${cur?`<span class="pdet-k">선택한 기록</span><h3>${cur.title}</h3>${pHistBadge(cur)}<dl><dt>행동 종류</dt><dd>${{setting:'설정 변경',delete:'삭제 요청',memory:'메모리 수정'}[cur.type]}</dd><dt>대상</dt><dd>${cur.target}</dd><dt>시점</dt><dd>${fmtHist(cur.date)}</dd><dt>적용 범위</dt><dd>${cur.scope}</dd>${cur.before?`<dt>변경 전</dt><dd>${cur.before}</dd><dt>변경 후</dt><dd>${cur.after}</dd>`:''}</dl><div class="pnotebox">연구용 예시 데이터에 반영된 변경입니다. 실제 서비스 계정의 설정이나 메모리가 변경된 것은 아닙니다.</div>`:'<div class="pdet-empty"><p>선택한 기록이 없습니다.</p></div>'}</div></div>
  <p class="pnote">${ico('fa-solid fa-circle-info')}삭제 요청 접수는 실제 서버의 영구 삭제 완료를 의미하지 않습니다.</p>`}
-function showNextBar(){document.querySelector('#nextbar')?.remove();const n=document.createElement('div');n.id='nextbar';n.className='nextbar';n.innerHTML=`<span>${ico('fa-solid fa-circle-check')} 과제를 완료했습니다. 확인한 뒤 다음으로 넘어가 주세요.</span><button class="btn primary">확인 후 다음으로 ${ico('fa-solid fa-arrow-right')}</button>`;document.body.appendChild(n);const b=n.querySelector('button');b.focus();b.onclick=()=>{n.remove();afterTask()}}
+function showNextBar(){showLayer({title:'과제를 완료했습니다',body:'찾은 내용을 확인한 뒤<br>다음으로 넘어가 주세요.',btn:`확인 후 다음으로 ${ico('fa-solid fa-arrow-right')}`,onOk:afterTask})}
 /* 제안 화면 클릭 처리. 반환값 true = 처리함 */
 function pClick(e){
  const t=e.target;
@@ -432,7 +432,7 @@ function pClick(e){
  const act=el.dataset.act||el.dataset.action;
  if(act==='nav'){page=el.dataset.page;if(el.dataset.tab){ptab=el.dataset.tab}renderTask();pCheckMemory();return true}
  if(act==='ptab'){ptab=el.dataset.tab;renderTask();pCheckMemory();return true}
- if(act==='pick'){const i=+el.dataset.i;psel[ptab]=i;renderTask();if(ptab==='file'&&task().id==='files'){if(i===FILE_TARGET){finishTask('success',true);showNextBar()}else errors++}return true}
+ if(act==='pick'){const i=+el.dataset.i;psel[ptab]=i;renderTask();if(ptab==='file'&&task().id==='files'){if(i===FILE_TARGET){finishTask('success',true);showLayer({icon:'fa-file-lines',color:'#254fc2',title:esc(FILES[i][0]),body:esc(FILES[i][1])+'<br>파일을 찾았습니다.',btn:`확인 후 다음으로 ${ico('fa-solid fa-arrow-right')}`,onOk:afterTask})}else errors++}return true}
  if(act==='hpick'){hsel=+el.dataset.i;if(page!=='history'){page='history';hfilter='all'}renderTask();return true}
  if(act==='hfilter'){hfilter=el.dataset.f;renderTask();return true}
  if(act==='pref'){const k=el.dataset.k;prefs[k]=!prefs[k];const name=k==='memRef'?'저장 메모리 참조':'대화 기록 참조';pAddHist({type:'setting',title:name+' 설정 변경',sub:'이후 답변의 개인화',badge:'설정 변경됨',target:name,scope:'설정 이후 답변',before:onoff(!prefs[k]),after:onoff(prefs[k])});renderTask();return true}
