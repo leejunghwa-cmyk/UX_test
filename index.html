@@ -101,6 +101,98 @@ table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}td,th{p
 .layerbox.frame{font-family:inherit;color:#000;border-radius:12px;padding:32px 32px 26px}.layerbox.frame h3{font-size:21px;letter-spacing:-.04em}.layerbox.frame p{color:#444;font-size:15px;word-break:keep-all}
 .layerbtns{display:flex;gap:10px;margin-top:24px}.layerbtns .btn{flex:1;min-width:0;width:auto;margin:0}
 
+/* 제안 대시보드 (jh 프로토타입) */
+.workspace.proposed{grid-template-columns:270px 1fr;background:#f6f7f9;color:#1a1f2b;font-family:Pretendard,'Noto Sans KR',Arial,sans-serif;--pb:#2f5fe0;--pbl:#eaf0ff;--pl:#e6e8ec}
+.proposed i[aria-hidden]{font-style:normal}
+.psb{background:#fbfbfc;border-right:1px solid var(--pl);padding:36px 20px 24px;display:flex;flex-direction:column}
+.psb-brand b{display:block;font-size:20px;letter-spacing:-.03em}.psb-brand span{display:block;margin-top:4px;font-size:14px;letter-spacing:.08em;color:#667085}
+.psb nav{margin-top:44px;display:grid;gap:6px}
+.pnav{display:flex;align-items:center;gap:14px;width:100%;border:0;background:transparent;border-radius:10px;padding:16px 18px;font-size:17px;font-weight:600;color:#2a2f3a;text-align:left}
+.pnav i{width:22px;text-align:center;font-size:18px;color:#5b6474}.pnav:hover{background:#f0f2f6}
+.pnav.active{background:var(--pbl);color:var(--pb)}.pnav.active i{color:var(--pb)}
+.psb-foot{margin-top:auto;padding-top:22px;border-top:1px solid var(--pl)}.psb-foot b{font-size:14px;color:#3a4150}.psb-foot p{margin:8px 0 0;font-size:13px;line-height:1.6;color:#667085!important}
+.pmain{min-width:0;display:flex;flex-direction:column}
+.ptop{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:#fff;border-bottom:1px solid var(--pl)}
+.crumb{font-size:14px;color:#667085}.crumb span{margin:0 12px}.crumb b{color:#1a1f2b}
+.pchip-out{border:1px solid var(--pl);border-radius:8px;padding:6px 12px;font-size:13px;color:#555;background:#fff;white-space:nowrap}.pchip-out.sm{padding:3px 10px;font-size:12px}
+.pbody{padding:44px 48px 28px}
+.ph1{font-size:38px;font-weight:800;letter-spacing:-.04em;margin:0 0 10px}
+.psub2{font-size:16px;color:#5b6474!important;margin:0}
+.psubrow{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.pmuted{color:#8a93a3!important;font-size:13px}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.pcard{background:#fff;border:1px solid var(--pl);border-radius:16px;padding:26px 26px 22px;text-align:left;color:inherit}
+.pcard:hover{border-color:#c9d4f5;box-shadow:0 4px 16px #2f5fe010}
+.pcard-h{display:flex;justify-content:space-between;align-items:center}.pcard-h b{font-size:16px}
+.pico{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:#f1f3f7;color:#5b6474}.pico.lg{width:54px;height:54px;font-size:20px;color:var(--pb);background:#f1f4fb}
+.pnum{font-size:36px;font-weight:800;margin:18px 0 8px}.pnum small{font-size:14px;font-weight:500;margin-left:6px;color:#667085}
+.pcard p{margin:0;font-size:14px;color:#5b6474!important}
+.pnote{display:flex;align-items:center;gap:8px;margin:18px 0 0;font-size:13px;color:#667085!important}
+.pbox{background:#fff;border:1px solid var(--pl);border-radius:16px;margin-top:26px;overflow:hidden}
+.pbox-h{padding:26px 30px 18px}.pbox-h h2{margin:0;font-size:20px;letter-spacing:-.03em}.pbox-h p{margin:6px 0 0;font-size:14px;color:#5b6474!important}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:16px}.prow-r{display:flex;align-items:center;gap:16px}
+.pgroup{display:flex;align-items:center;gap:16px}
+.pbox-f{display:flex;align-items:center;gap:8px;padding:16px 30px;border-top:1px solid var(--pl);background:#fafbfc;font-size:13px;color:#667085}
+.pbox-f.prow span{display:flex;align-items:center;gap:8px}
+.ptable-wrap{padding:0 30px 8px;overflow:auto}
+.ptable{width:100%;border-collapse:collapse;font-size:14px;margin:0}
+.ptable th{background:#f6f7f9;color:#5b6474;font-weight:500;padding:14px 20px}.ptable td{padding:20px;border-bottom:1px solid var(--pl);vertical-align:middle;line-height:1.6}
+.ptable tr:last-child td{border-bottom:0}
+.pt{display:flex;align-items:center;gap:10px;font-weight:700;white-space:nowrap}.pt i{color:#5b6474}
+.pbadge{display:inline-block;margin-top:4px;padding:2px 9px;border-radius:6px;font-size:12px;font-weight:700;background:#f1f3f7;color:#5b6474;white-space:nowrap}
+.pbadge.blue{background:var(--pbl);color:var(--pb)}.pbadge.green{background:#e8f6ee;color:#16794a}.pbadge.red{background:#fdecec;color:#c53030}
+.plink{border:0;background:none;padding:4px 0;color:var(--pb);font-weight:600;font-size:15px;white-space:nowrap}.plink i{font-size:11px;margin-left:6px}
+.phlist{padding:0 30px 10px}
+.phrow{display:flex;align-items:center;gap:16px;width:100%;border:0;border-top:1px solid var(--pl);background:none;padding:18px 0;text-align:left;color:inherit}
+.phrow:first-child{border-top:0}.phrow>i{color:#98a1b2;font-size:12px}
+.phico{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#f1f3f7;color:#5b6474;flex:0 0 40px}
+.phtxt{flex:1}.phtxt b{display:block;font-size:15px}.phtxt small{font-size:12px;color:#8a93a3}
+.ptabs{display:flex;gap:8px;margin-top:30px}
+.ptab{border:1px solid var(--pl);background:#fff;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;color:#3a4150}.ptab small{color:#8a93a3;margin-left:4px;font-size:14px}
+.ptab.on{background:#1a2234;border-color:#1a2234;color:#fff}.ptab.on small{color:#c9d0dd}
+.pfilter{display:flex;gap:12px;align-items:center;margin-top:22px}
+.pfilter input[type=date]{height:50px;border:1px solid var(--pl);border-radius:10px;padding:0 14px;background:#fff;color:#333}
+.psearch{flex:1;display:flex;align-items:center;gap:10px;height:50px;border:1px solid var(--pl);border-radius:10px;padding:0 16px;background:#fff;color:#8a93a3}
+.psearch input{flex:1;border:0;outline:0;font-size:15px;background:none}
+.pdel,.pdelbtn{display:inline-flex;align-items:center;gap:8px;height:50px;border:1px solid #f2c4c4;border-radius:10px;padding:0 18px;background:#fff;color:#d33;font-weight:600;white-space:nowrap}
+.pdel:disabled,.pdelbtn:disabled{opacity:.5}
+.pgrid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,1fr);gap:24px;align-items:start;margin-top:22px}
+.pgrid .pbox{margin-top:0}
+.plist{max-height:560px;overflow:auto}
+.plrow{display:grid;grid-template-columns:28px 1fr 110px;gap:16px;align-items:center;padding:18px 26px;border-top:1px solid var(--pl);cursor:pointer;font-size:15px}
+.plrow:hover{background:#fafbfd}.plrow.sel{background:#eef3ff}
+.plrow.phead{cursor:default;background:#f6f7f9;color:#5b6474;font-size:14px;padding-top:14px;padding-bottom:14px}
+.plrow input{width:18px;height:18px;accent-color:var(--pb)}
+.pltitle{font-weight:700}.pldate{font-size:13px;color:#8a93a3}
+.plfoot{padding:14px 26px;border-top:1px solid var(--pl);font-size:12px;color:#8a93a3}
+.pempty{padding:28px;text-align:center;color:#8a93a3;font-size:14px}
+.pdetail{padding:28px 28px 30px}
+.pdet-k{font-size:12px;font-weight:700;color:#667085}
+.pdetail h3{margin:14px 0 6px;font-size:21px;letter-spacing:-.03em;word-break:keep-all}
+.pbubble{margin:20px 0;background:#f6f7f9;border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.8}.pbubble p{margin:0;color:#222!important}.pbubble p+p{margin-top:12px}
+.pdetail dl{display:grid;grid-template-columns:100px 1fr;gap:12px 10px;margin:18px 0 24px;font-size:14px}.pdetail dt{color:#8a93a3}.pdetail dd{margin:0;color:#222}
+.pdelbtn{height:48px}
+.pfileprev{margin:20px 0 0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px;border:1px dashed #cfd6e2;border-radius:12px;color:#5b6474}.pfileprev i{font-size:30px;color:var(--pb)}.pfileprev small{color:#8a93a3}
+.pdet-empty{text-align:center;padding:60px 10px;color:#8a93a3}.pdet-empty i{font-size:26px}.pdet-empty p{margin:12px 0 0;line-height:1.7;color:#8a93a3!important}
+.pnotebox{border:1px solid var(--pl);border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.6;color:#555}
+.pset{padding:26px 30px;border-top:1px solid var(--pl)}
+.pset-h{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.pset-h b{font-size:17px}.pset-h p{margin:6px 0 0;font-size:14px;color:#5b6474!important}
+.proposed .toggle{width:54px;height:30px}.proposed .toggle i{width:24px;height:24px}.proposed .toggle.on{background:var(--pb)}.proposed .toggle.on i{transform:translateX(24px)}
+.ponoff{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.ponoff div{background:#f6f7f9;border-radius:10px;padding:16px 18px}.ponoff b{font-size:14px}.ponoff p{margin:6px 0 0;font-size:14px;color:#5b6474!important}
+.pset-n{margin:16px 0 0;font-size:13px;color:#5b6474!important}
+.pseg{display:inline-flex;gap:4px;margin-top:28px;background:#eef0f4;border-radius:12px;padding:5px}
+.pseg button{border:0;background:none;border-radius:9px;padding:10px 20px;font-size:15px;color:#5b6474}.pseg button.on{background:#fff;color:#1a1f2b;font-weight:700;box-shadow:0 1px 3px #0001}
+.phtable{font-size:14px}
+.phth,.phtr{display:grid;grid-template-columns:1fr 1.6fr .9fr;gap:12px;align-items:center;padding:16px 24px}
+.phth{background:#f6f7f9;color:#5b6474}
+.phtr{width:100%;border:0;border-top:1px solid var(--pl);background:none;text-align:left;color:inherit}.phtr.sel{background:#eef3ff}
+.phtr b{display:block;font-size:15px}.phtr small{display:block;font-size:12px;color:#8a93a3;margin-top:2px}
+.pfoot{display:flex;justify-content:space-between;gap:16px;margin-top:34px;font-size:12px;color:#8a93a3}
+.nextbar{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9;display:flex;align-items:center;gap:18px;background:#111;color:#fff;border-radius:14px;padding:12px 12px 12px 22px;box-shadow:0 12px 32px #0004;font-weight:600;font-size:15px;max-width:calc(100% - 32px)}
+.nextbar i{color:#4ade80;margin-right:6px}.nextbar .btn{height:44px;min-width:0;white-space:nowrap}.nextbar .btn i{color:#fff;margin:0 0 0 6px}
+@media(max-width:1100px){.pgrid{grid-template-columns:1fr}.pcards{grid-template-columns:1fr}.pbody{padding:32px 24px}.ptop{padding:0 24px}.ptable td,.ptable th{padding:14px 10px}}
+@media(max-width:760px){.workspace.proposed{grid-template-columns:1fr}.psb{padding:20px}.psb nav{margin-top:16px;grid-template-columns:1fr 1fr}.psb-foot{display:none}.pfilter{flex-wrap:wrap}.ponoff{grid-template-columns:1fr}.nextbar{flex-direction:column;align-items:stretch;text-align:center}}
+
 /* 시작 화면 */
 body:has(.intro-wrap){background:#f3f4f6}
 .intro-wrap{width:100%;max-width:1240px;min-height:calc(100svh - 60px);margin:0 auto;padding:56px 40px 64px;display:flex;align-items:center}
@@ -215,7 +307,7 @@ app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="
 document.querySelector('#begin').onclick=()=>{const code=document.querySelector('#code').value.trim();if(!code||!document.querySelector('#consent').checked){document.querySelector('#error').textContent='참여자 코드와 참여 동의를 확인해 주세요.';return}const go=()=>{const studyType=assignType(code);session={version:VERSION,id:typeof crypto.randomUUID==='function'?crypto.randomUUID():'session-'+Date.now()+'-'+Array.from(crypto.getRandomValues(new Uint32Array(2))).join('-'),code,studyType,order:[...orders[studyType]],createdAt:new Date().toISOString(),userAgent:navigator.userAgent,screen:innerWidth+'x'+innerHeight,records:[],surveys:[],outbox:[...((old&&old.outbox)||[])],active:null,status:'in_progress',storage:ENDPOINT?'remote_sheet+browser':'browser_local_only'};idx=0;persist();send('start',{createdAt:session.createdAt,userAgent:session.userAgent,screen:session.screen});brief()};if(old)showConfirm({title:'새로 시작할까요?',body:'이 브라우저에 남아 있는 이전 기록이<br>새 참여 기록으로 바뀝니다.',ok:'새로 시작하기',cancel:'취소',onOk:go});else go()};
 document.querySelector('#resume').onclick=()=>{if(!old){document.querySelector('#error').textContent='이 브라우저에 저장된 이전 기록이 없습니다.';return}session=old;results()}}
 
-function brief(){window.scrollTo(0,0);stage='brief';page=condition()==='existing'?'general':'overview';learning=true;memItems=MEM_BASE.map(m=>({...m}));memoryOpen=false;completed=false;const t=task();
+function brief(){window.scrollTo(0,0);stage='brief';page=condition()==='existing'?'general':'summary';pReset();learning=true;memItems=MEM_BASE.map(m=>({...m}));memoryOpen=false;completed=false;const t=task();
 app.innerHTML=`<main class="page center"><section class="panel brief"><div class="screen-pill"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="meta">${ADMIN?esc(session.studyType)+'유형<i>|</i>':''}TASK ${idx+1}/${TOTAL}</div><span class="badge">${idx%PER+1}번째 과제</span><h1 class="brief-title">${t.title}</h1><p class="brief-inst">${t.lead}</p><p class="brief-desc">‘시작하기’를 누르면 화면이 열리고 시간 측정이 시작됩니다.<br>목표 동작을 수행하면 시간 측정이 종료됩니다. 수행하기 어려우면 ‘과제 중단’을 선택해 주세요.</p><div class="hint">화면 속 모든 내용은 테스트용 가상 데이터입니다. 과제마다 설정과 시작 위치가 초기화됩니다.</div><div class="btns"><button class="btn primary" id="start">시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="btn" id="exit">기록 저장 후 나가기</button></div></section></main>`;
 document.querySelector('#start').onclick=startTask;document.querySelector('#exit').onclick=results}
 
@@ -223,11 +315,141 @@ function startTask(){stage='task';clicks=0;errors=0;away=0;hiddenAt=null;startAt
 function row(title,description,control){return `<div class="row"><div>${title}${description?`<p>${description}</p>`:''}</div>${control||''}</div>`}
 function toggle(){return `<button data-action="learning" class="toggle ${learning?'on':''}" role="switch" aria-checked="${learning}" aria-label="모델 개선을 위한 데이터 학습 허용"><i></i></button>`}
 function existingContent(){if(page==='general')return '<h2>일반</h2><div class="settingsbox">'+row('언어','앱 UI 언어','<button class="pill" data-action="noop">자동 감지</button>')+row('사용 가능한 추론 수준','모델 컨트롤에 표시할 추론 수준을 선택하세요. 사용 가능 여부는 모델마다 다릅니다.','<button class="pill" data-action="noop">6개 선택됨</button>')+'</div>';if(page==='personalization')return `<h2>개인 맞춤 설정</h2><h3>ChatGPT 메모리</h3><p class="muted">ChatGPT의 메모리 관리 방식을 설정합니다.</p><div class="settingsbox">${row('메모리 활성화','ChatGPT가 채팅, 파일, 연결된 앱을 바탕으로 사용자 경험을 맞춤 설정합니다.','<button class="toggle on" data-action="noop" role="switch" aria-checked="true" aria-label="메모리 활성화"><i></i></button>')}${row('메모리 요약','ChatGPT가 회원님에 대해 알게 된 내용을 한눈에 확인하세요. 항상 기억해 두었으면 하는 정보는 사용자 지정 지침에 입력하세요. 기존에 <button class="link" data-action="memlist">저장된 메모리</button>도 계속 관리할 수 있습니다.','<button class="pill" data-action="memory">관리</button>')}</div><h3 style="margin-top:45px">글쓰기</h3><div class="settingsbox">${row('내 문체 참고','ChatGPT가 채팅, 라이브러리 파일, 연결된 앱을 참고해 사용자의 문체로 글을 쓰도록 허용하세요.','<button class="toggle" data-action="noop" role="switch" aria-checked="false" aria-label="내 문체 참고"><i></i></button>')}</div><h3 style="margin-top:45px">참고 사진</h3><div class="settingsbox">${row('참고 사진','내 모습을 담은 이미지를 만들 때 ChatGPT가 참고하는 사진입니다.','<button class="pill" data-action="noop">추가 ›</button>')}</div>`;if(page==='data')return `<h2>데이터 관리</h2><div class="settingsbox">${row('공유 링크','','<button class="pill" data-action="noop">관리</button>')}${row('모델 개선을 위한 데이터 학습 허용','채팅이 모델 학습에 사용될지 설정하세요.',toggle())}${row('위치','이 설정을 켜면 ChatGPT가 사용자의 위치를 활용하여 지역 맞춤 추천, 뉴스, 날씨 등 관련성 높은 정보를 제공합니다.','<button class="pill" data-action="noop">켜기</button>')}${row('Work 네트워크 액세스','','<button class="toggle on" data-action="noop" role="switch" aria-checked="true" aria-label="Work 네트워크 액세스"><i></i></button>')}${row('ChatGPT Work 재설정','','<button class="pill" data-action="noop" style="color:#dc5252">재설정</button>')}${row('앱과 공유되는 정보','','<button class="pill" data-action="noop">›</button>')}${row('보관된 채팅','','<button class="pill" data-action="noop">›</button>')}${row('모든 채팅 보관하기','','<button class="pill" data-action="noop">모두 보관하기</button>')}${row('모든 채팅 삭제','','<button class="pill" data-action="noop" style="color:#dc5252">전체 삭제</button>')}${row('데이터 내보내기','','<button class="pill" data-action="noop">내보내기</button>')}${row('쿠키 설정','','<button class="pill" data-action="noop">관리</button>')}</div>`;if(page==='storagefiles')return '<h2>파일</h2><p>업로드한 파일을 확인하고 관리하세요.</p><div class="settingsbox">'+fileRows()+'</div>';if(page==='storage')return '<h2>저장 공간</h2><b>20 GB 중 1.94 GB 사용</b><div style="background:#ddd;height:9px;border-radius:10px;margin:20px 0 45px"><div style="width:10%;background:#111;height:100%;border-radius:10px"></div></div><h3>저장 공간 관리</h3><p>저장 공간을 관리해 여유 공간을 확보하세요.</p><div class="settingsbox">'+row('파일','6.8 MB · 파일 3개','<button class="pill" data-action="nav" data-page="storagefiles">›</button>')+row('이미지','684 MB · 이미지 1,537개','<button class="pill" data-action="noop">›</button>')+'</div>';return `<h2>${esc(page)}</h2><p>이 메뉴의 세부 기능은 구현되어 있지 않습니다.</p>`}
-function proposedContent(){if(page==='memory')return `<h2>저장메모리</h2><p>개인화에 참고되는 나에 관한 정보를 확인합니다.</p><div class="settingsbox">${row('메모리 요약','기억된 내용의 요약이며 전체 목록은 아닙니다.','<button class="wprimary" data-action="memory">요약 보기</button>')}${row('저장된 메모리','AI가 기억하고 있는 항목을 하나씩 확인하고 지울 수 있습니다.','<button class="wprimary" data-action="memlist">항목 관리</button>')}</div>`;if(page==='purposes')return `<h2>활용 목적과 설정</h2><p>개인화와 모델 개선 설정을 구분해 확인합니다.</p><div class="settingsbox">${row('개인화','메모리를 참고해 나에게 맞는 답변을 제공합니다.','<span class="wchip">켜짐</span>')}${row('모델 개선','새로 입력하는 채팅의 모델 학습 사용 여부를 설정합니다.',toggle())}</div><p class="muted">모델 학습 설정과 메모리 활용 설정은 별도의 항목입니다.</p>`;if(page==='chats')return '<h2>대화기록</h2><p>저장된 대화 12개 · 이 메뉴의 세부 기능은 구현되어 있지 않습니다.</p>';if(page==='files')return '<h2>업로드 자료</h2><p>채팅에 올린 파일과 이미지를 한곳에서 확인합니다.</p><div class="settingsbox">'+fileRows()+'</div>';return `<span class="weyebrow">MY DATA OVERVIEW</span><h2>내 데이터 관리</h2><p>저장된 정보와 활용 설정을 한곳에서 확인하세요.</p><div class="cards"><button class="metric" data-action="nav" data-page="chats">대화기록<b>12<span> 개</span></b><span>저장된 대화 확인 →</span></button><button class="metric" data-action="nav" data-page="memory">저장메모리<b>요약</b><span>나에 대해 기억하는 내용 →</span></button><button class="metric" data-action="nav" data-page="files">업로드 자료<b>3<span> 개</span></b><span>파일과 이미지 확인 →</span></button></div><h3>데이터 활용 설정</h3><div class="settingsbox">${row('개인화','저장메모리를 참고한 맞춤 답변','<button class="pill" data-action="nav" data-page="memory">메모리 확인</button>')}${row('모델 개선','새로 입력하는 채팅의 모델 학습 사용 여부',toggle())}</div><p class="muted" style="font-size:13px">요약은 기억된 정보의 전체 목록이 아닙니다.</p>`}
+/* ───────── 제안 대시보드 (jh 프로토타입: 상태 요약 · 저장 데이터 · 활용 설정 · 관리 이력) ───────── */
+const P_CHATS=[
+['여행 일정 정리','2026-10-26','3박 4일 여행 일정을 정리해 줘.','이동 시간을 고려해 날짜별로 일정을 나누고, 방문할 장소와 휴식 시간을 함께 정리할 수 있습니다.'],
+['논문 인터뷰 질문 검토','2026-10-25','인터뷰 질문이 너무 유도적인지 봐 줘.','질문마다 답을 암시하는 표현이 있는지 확인하고, 중립적인 표현으로 바꾼 예시를 제안할 수 있습니다.'],
+['회의 내용 요약','2026-10-24','오늘 회의 메모를 세 줄로 요약해 줘.','결정 사항, 담당자, 다음 일정 순서로 핵심 내용을 정리할 수 있습니다.'],
+['발표 자료 목차 구성','2026-10-23','발표 자료 목차를 짜 줘.','문제 제기, 분석, 제안, 기대 효과 순서로 흐름을 잡아 목차를 구성할 수 있습니다.'],
+['대시보드 정보구조 정리','2026-10-22','대시보드 메뉴 구조를 정리해 줘.','사용 빈도와 목적에 따라 메뉴를 묶고, 상위·하위 단계를 나눠 정리할 수 있습니다.'],
+['주간 업무 계획','2026-10-21','이번 주 할 일을 우선순위대로 정리해 줘.','마감일과 중요도를 기준으로 할 일을 나누고 요일별 계획을 제안할 수 있습니다.'],
+['책 추천과 독서 메모','2026-10-20','주말에 읽을 책을 추천해 줘.','관심 분야와 분량을 고려해 책을 추천하고, 읽으면서 남길 메모 형식을 제안할 수 있습니다.'],
+['설문 문항 표현 검토','2026-10-19','설문 문항이 이해하기 쉬운지 봐 줘.','한 문항에 두 가지를 묻는지, 어려운 용어가 있는지 확인하고 수정안을 제안할 수 있습니다.'],
+['프로젝트 일정 정리','2026-10-18','프로젝트 일정을 단계별로 나눠 줘.','준비, 진행, 검토 단계로 나누고 단계별 산출물과 기한을 정리할 수 있습니다.'],
+['자료 조사 요약','2026-10-17','조사한 자료의 핵심만 정리해 줘.','자료별 주요 주장과 근거를 표로 정리하고, 공통점과 차이점을 비교할 수 있습니다.'],
+['이메일 문장 다듬기','2026-10-16','보낼 메일을 정중하게 다듬어 줘.','인사, 용건, 요청 사항이 분명하게 드러나도록 문장을 정리할 수 있습니다.'],
+['요리 레시피 추천','2026-10-15','냉장고 재료로 만들 수 있는 요리를 알려 줘.','가지고 있는 재료로 간단히 만들 수 있는 메뉴와 조리 순서를 제안할 수 있습니다.'],
+['사용자 조사 결과 정리','2026-10-14','인터뷰 내용을 주제별로 묶어 줘.','반복해서 나온 의견을 주제별로 묶고, 대표 발언과 함께 정리할 수 있습니다.'],
+['경쟁 서비스 비교','2026-10-13','비슷한 서비스 세 곳을 비교해 줘.','주요 기능, 장단점, 차별점을 기준으로 비교표를 만들 수 있습니다.'],
+['회의 안건 작성','2026-10-12','다음 회의 안건을 정리해 줘.','논의할 주제와 필요한 결정 사항, 예상 소요 시간을 함께 정리할 수 있습니다.'],
+['산책 코스 추천','2026-10-11','주말에 걷기 좋은 곳을 추천해 줘.','붐비지 않고 천천히 걸을 수 있는 공원과 강변 코스를 추천할 수 있습니다.'],
+['보고서 문단 다듬기','2026-10-10','이 문단을 더 읽기 쉽게 바꿔 줘.','긴 문장을 나누고, 핵심 내용이 먼저 보이도록 순서를 바꿀 수 있습니다.'],
+['엑셀 함수 질문','2026-10-09','조건에 맞는 값만 더하는 함수를 알려 줘.','SUMIF 함수를 사용해 조건에 맞는 값만 더하는 방법을 예시와 함께 설명할 수 있습니다.'],
+['영화 추천','2026-10-08','두 시간 안쪽의 영화를 추천해 줘.','장르와 상영 시간을 함께 고려해 결말을 밝히지 않고 추천할 수 있습니다.'],
+['기획서 초안 검토','2026-10-07','기획서 초안에서 빠진 내용이 있는지 봐 줘.','목표, 대상 사용자, 기대 효과, 일정 항목이 모두 들어 있는지 확인할 수 있습니다.'],
+['사진 보정 팁','2026-10-06','휴대전화 사진을 자연스럽게 보정하는 방법을 알려 줘.','밝기와 색감을 과하지 않게 조정하는 순서를 단계별로 안내할 수 있습니다.'],
+['일정 공유 메시지 작성','2026-10-05','팀에 일정 변경을 알리는 메시지를 써 줘.','변경된 내용과 이유, 확인이 필요한 사항이 잘 보이도록 메시지를 작성할 수 있습니다.'],
+['용어 설명 요청','2026-10-04','정보구조라는 말을 쉽게 설명해 줘.','일상적인 예를 들어 정보를 어떻게 나누고 배치하는지 쉽게 설명할 수 있습니다.'],
+['운동 루틴 짜기','2026-10-03','주 3회 가볍게 할 수 있는 운동을 짜 줘.','무리하지 않는 강도로 요일별 운동 구성을 제안할 수 있습니다.']];
+const MEM_DATE={m1:'2026-10-02',m2:'2026-10-23',m3:'2026-10-15',m4:'2026-10-22',m5:'2026-10-11',m6:'2026-10-18'};
+const FILE_DATE=['2026-10-27','2026-10-29','2026-11-01'];
+const P_HIST_BASE=[
+{date:'2026-10-26T14:32',type:'setting',title:'저장 메모리 참조 설정 변경',sub:'이후 답변의 개인화',badge:'설정 변경됨',target:'저장 메모리 참조',scope:'설정 이후 답변',before:'꺼짐',after:'켜짐',sample:true},
+{date:'2026-10-24T10:18',type:'setting',title:'대화 기록 참조 설정 변경',sub:'이후 답변의 개인화',badge:'설정 변경됨',target:'대화 기록 참조',scope:'설정 이후 답변',before:'꺼짐',after:'켜짐',sample:true},
+{date:'2026-10-21T16:05',type:'memory',title:'저장 메모리 수정',sub:'저장 메모리 1개',badge:'수정됨',target:'저장 메모리',scope:'저장 메모리 1개',before:'‘주말에는 산책을 즐긴다.’',after:'‘주말에는 산책과 간단한 요리를 즐긴다.’',sample:true}];
+let ptab='chat',psel={chat:0,mem:null,file:null},pchecked=new Set(),pq='',pfrom='',pto='',hfilter='all',hsel=0,prefs={memRef:true,chatRef:true},phist=[],preqs=new Set();
+function pReset(){ptab='chat';psel={chat:0,mem:null,file:null};pchecked=new Set();pq='';pfrom='';pto='';hfilter='all';hsel=0;prefs={memRef:true,chatRef:true};phist=P_HIST_BASE.map(h=>({...h}));preqs=new Set()}
+const PAGE_NAME={summary:'상태 요약',data:'저장 데이터',settings:'활용 설정',history:'관리 이력'};
+const ico=(c)=>`<i class="${c}" aria-hidden="true"></i>`;
+const fmtD=d=>d.slice(0,10).replace(/-/g,'. ')+'.';
+const fmtHist=d=>{const [a,b]=d.split('T');return a.replace(/-/g,'. ')+'. '+(b||'')};
+function pItems(kind){if(kind==='chat')return P_CHATS.map((c,i)=>({key:'chat:'+i,i,title:c[0],date:c[1],text:c[2]+' '+c[3]}));if(kind==='mem')return memItems.map((m,i)=>({key:'mem:'+m.id,i,id:m.id,title:m.text,date:MEM_DATE[m.id]||'2026-10-01',text:m.text}));return FILES.map((f,i)=>({key:'file:'+i,i,title:f[0],date:FILE_DATE[i],text:f[0]+' '+f[1]}))}
+function pFiltered(kind){return pItems(kind).filter(x=>(!pq||(x.title+' '+x.text).includes(pq))&&(!pfrom||x.date>=pfrom)&&(!pto||x.date<=pto))}
+function pAddHist(h){const n=new Date(),z=v=>String(v).padStart(2,'0');phist.unshift({date:`${n.getFullYear()}-${z(n.getMonth()+1)}-${z(n.getDate())}T${z(n.getHours())}:${z(n.getMinutes())}`,...h});hsel=0}
+const onoff=v=>v?'켜짐':'꺼짐';
+function pToggle(k,on,label){return `<button class="toggle ${on?'on':''}" data-action="${k==='model'?'learning':'pref'}" data-k="${k}" role="switch" aria-checked="${on}" aria-label="${label}"><i></i></button>`}
+function proposedShell(){
+ const nav=[['summary','fa-solid fa-table-cells-large','상태 요약'],['data','fa-solid fa-database','저장 데이터'],['settings','fa-solid fa-sliders','활용 설정'],['history','fa-regular fa-clock','관리 이력']];
+ return `<aside class="psb"><div class="psb-brand"><b>데이터 관리</b><span>DATA CONTROL</span></div><nav>${nav.map(([id,ic,n])=>`<button class="pnav ${page===id?'active':''}" data-action="nav" data-page="${id}">${ico(ic)}${n}</button>`).join('')}</nav><div class="psb-foot"><b>● 연구용 프로토타입</b><p>예시 데이터로 데이터 관리 과정을 경험할 수 있습니다.</p></div></aside>
+ <section class="pmain"><div class="ptop"><div class="crumb">생성형 AI 데이터 관리<span>/</span><b>${PAGE_NAME[page]||''}</b></div><span class="pchip-out">예시 데이터</span></div><div class="pbody">${page==='data'?pData():page==='settings'?pSettings():page==='history'?pHistory():pSummary()}<div class="pfoot"><span>연구용 예시 · 실제 계정 및 서버와 연결되지 않습니다.</span><span>데이터 이해 · 선택 · 결과 확인</span></div></div></section>`}
+function pSummary(){
+ const counts={chat:P_CHATS.length,mem:memItems.length,file:FILES.length};
+ const req=k=>[...preqs].filter(x=>x.startsWith(k+':')).length;
+ const card=(k,t,ic,sub)=>`<button class="pcard" data-action="nav" data-page="data" data-tab="${k}"><div class="pcard-h"><b>${t}</b><span class="pico">${ico(ic)}</span></div><div class="pnum">${counts[k]}<small>개</small></div><p>${sub}</p></button>`;
+ const rowS=(k,t,ic,purpose,setting,link)=>`<tr><td><span class="pt">${ico(ic)}${t}</span></td><td>${purpose}</td><td>${setting}</td><td>${req(k)?`<span class="pbadge red">요청 ${req(k)}건</span>`:'요청 없음'}</td><td><button class="plink" data-action="nav" data-page="data" data-tab="${k}">${link} ${ico('fa-solid fa-chevron-right')}</button></td></tr>`;
+ const set=(n,v)=>`${n}<br><span class="pbadge ${v?'blue':''}">${onoff(v)}</span>`;
+ return `<h1 class="ph1">내 데이터 관리</h1><div class="psubrow"><p class="psub2">저장된 데이터와 활용 설정, 최근 관리 이력을 확인합니다.</p><span class="pmuted">연구용 시나리오 · 예시 데이터</span></div>
+ <div class="pcards">${card('chat','대화 기록','fa-regular fa-comment','과거 대화와 대화 원문')}${card('mem','저장 메모리','fa-solid fa-gear','개인화를 위해 저장된 정보')}${card('file','업로드 자료','fa-regular fa-file-lines','대화에 첨부한 파일')}</div>
+ <p class="pnote">${ico('fa-solid fa-circle-info')}저장 항목 수에는 삭제 요청이 접수된 항목도 포함됩니다. 이 프로토타입은 요청 접수만 기록하며 실제 삭제 완료를 확인하지 않습니다.</p>
+ <div class="pbox"><div class="pbox-h"><h2>데이터별 활용 범위</h2><p>데이터 종류에 따라 활용 목적과 관련 설정이 다릅니다.</p></div><div class="ptable-wrap"><table class="ptable"><thead><tr><th>데이터 종류</th><th>활용 목적</th><th>관련 설정</th><th>삭제 요청 상태</th><th>관리</th></tr></thead><tbody>
+ ${rowS('chat','대화 기록','fa-regular fa-comment','진행 중인 대화의 답변 맥락으로 사용합니다.<br>과거 대화는 참조 설정에 따라 이후 답변에 참고할 수 있습니다.',set('대화 기록 참조',prefs.chatRef),'대화 관리')}
+ ${rowS('mem','저장 메모리','fa-solid fa-gear','저장된 선호와 정보를 이후 답변의<br>개인화에 참고합니다.',set('저장 메모리 참조',prefs.memRef),'메모리 관리')}
+ ${rowS('file','업로드 자료','fa-regular fa-file-lines','자료가 첨부된 대화에서<br>답변을 만드는 데 참고합니다.','<span class="pmuted">이 화면에 별도 설정 없음</span>','자료 관리')}
+ </tbody></table></div><div class="pbox-f">${ico('fa-solid fa-circle-info')}현재 설정에 따른 데이터 종류별 활용 가능 범위를 안내합니다.</div></div>
+ <div class="pbox"><div class="pbox-h prow"><div><h2>모델 개선을 위한 데이터 활용</h2><p>새 대화를 모델 개선에 활용하도록 허용할지 정하는 별도 설정입니다. 개인화 참조 설정과 구분됩니다.</p></div><div class="prow-r"><span class="pbadge ${learning?'blue':''}">활용 허용 ${onoff(learning)}</span><button class="plink" data-action="nav" data-page="settings">설정 보기 ${ico('fa-solid fa-chevron-right')}</button></div></div><div class="pbox-f">${ico('fa-solid fa-circle-info')}활용 허용 설정은 특정 데이터가 실제 모델 학습에 사용되었는지를 보여주지는 않습니다.</div></div>
+ <div class="pbox"><div class="pbox-h prow"><h2>최근 관리 이력</h2><button class="plink" data-action="nav" data-page="history">전체 이력 ${ico('fa-solid fa-chevron-right')}</button></div><div class="phlist">${phist.slice(0,3).map((h,i)=>pHistRow(h,i,true)).join('')}</div></div>`}
+function pHistIcon(t){return t==='delete'?'fa-regular fa-trash-can':t==='memory'?'fa-solid fa-pencil':'fa-solid fa-sliders'}
+function pHistBadge(h){return `<span class="pbadge ${h.type==='delete'?'red':h.type==='memory'?'green':'blue'}">${h.badge}</span>`}
+function pHistRow(h,i,compact){return `<button class="phrow" data-act="hpick" data-i="${i}"><span class="phico">${ico(pHistIcon(h.type))}</span><span class="phtxt"><b>${h.title}</b><small>${fmtHist(h.date)}${h.sample?' · 예시 기록':''}</small></span>${pHistBadge(h)}${ico('fa-solid fa-chevron-right')}</button>`}
+function pData(){
+ const tabs=[['chat','대화 기록',P_CHATS.length],['mem','저장 메모리',memItems.length],['file','업로드 자료',FILES.length]];
+ return `<h1 class="ph1">저장 데이터</h1><p class="psub2">대화 기록, 저장 메모리, 업로드 자료를 구분하여 확인하고 관리합니다.</p>
+ <div class="ptabs">${tabs.map(([k,n,c])=>`<button class="ptab ${ptab===k?'on':''}" data-action="ptab" data-tab="${k}">${n} <small>${c}</small></button>`).join('')}</div>
+ <div class="pfilter"><input type="date" id="pfrom" value="${pfrom}" aria-label="시작일"><span>–</span><input type="date" id="pto" value="${pto}" aria-label="종료일"><label class="psearch">${ico('fa-solid fa-magnifying-glass')}<input type="search" id="pq" value="${esc(pq)}" placeholder="제목 또는 내용 검색"></label><button class="pdel" data-action="delsel" ${pchecked.size?'':'disabled'}>${ico('fa-regular fa-trash-can')}선택 삭제 요청</button></div>
+ <div class="pgrid"><div class="pbox plistbox" id="plistbox">${pList()}</div><div class="pbox pdetail">${pDetail()}</div></div>
+ <p class="pnote">${ico('fa-solid fa-circle-info')}대화 기록과 저장 메모리는 별도 관리 대상입니다. 한 종류의 삭제 요청이 다른 종류의 삭제를 뜻하지 않습니다.</p>`}
+function pList(){
+ const T={chat:['대화 기록','대화 원문을 조회하고 삭제 요청 대상을 선택합니다.','대화 제목'],mem:['저장 메모리','개인화를 위해 저장된 정보를 확인하고 삭제 요청 대상을 선택합니다.','저장된 내용'],file:['업로드 자료','대화에 첨부한 파일을 확인하고 삭제 요청 대상을 선택합니다.','파일 이름']}[ptab];
+ const items=pFiltered(ptab);const all=items.length&&items.every(x=>pchecked.has(x.key));
+ return `<div class="pbox-h prow"><div><h2>${T[0]}</h2><p>${T[1]}</p></div><span class="pchip-out sm">${items.length}개 표시</span></div>
+ <div class="plist"><div class="plrow phead"><input type="checkbox" data-check="all" ${all?'checked':''} aria-label="전체 선택"><span>${T[2]}</span><span>${ptab==='file'?'업로드일':ptab==='mem'?'저장일':'생성일'}</span></div>
+ ${items.length?items.map(x=>`<div class="plrow ${psel[ptab]===x.i?'sel':''}" data-act="pick" data-i="${x.i}"><input type="checkbox" data-check="${x.key}" ${pchecked.has(x.key)?'checked':''} aria-label="${esc(x.title)} 선택"><span class="pltitle">${esc(x.title)}${preqs.has(x.key)?' <span class="pbadge red">삭제 요청됨</span>':''}</span><span class="pldate">${fmtD(x.date)}</span></div>`).join(''):'<div class="pempty">조건에 맞는 항목이 없습니다.</div>'}</div>
+ <div class="plfoot">총 ${pItems(ptab).length}개 · ${[...pchecked].filter(k=>k.startsWith(ptab+':')).length}개 선택 · 삭제 요청 접수 후에도 완료 전까지 항목은 표시됩니다.</div>`}
+function pDetail(){
+ const i=psel[ptab];const items=pItems(ptab);const x=items.find(v=>v.i===i);
+ if(x==null)return `<div class="pdet-empty">${ico('fa-regular fa-hand-pointer')}<p>왼쪽 목록에서 항목을 선택하면<br>상세 내용이 표시됩니다.</p></div>`;
+ const done=preqs.has(x.key);const btn=`<button class="pdelbtn" data-action="delone" data-key="${x.key}" ${done?'disabled':''}>${ico('fa-regular fa-trash-can')}${done?'삭제 요청됨':'삭제 요청'}</button>`;
+ if(ptab==='chat'){const c=P_CHATS[i];return `<span class="pdet-k">대화 기록 상세</span><h3>${c[0]}</h3><p class="pmuted">읽기 전용 · 대화 원문은 수정하지 않습니다.</p><div class="pbubble"><p>사용자: ${c[2]}</p><p>AI: ${c[3]}</p></div><dl><dt>생성일</dt><dd>${fmtD(c[1])}</dd><dt>최근 수정일</dt><dd>${fmtD(c[1])}</dd></dl>${btn}`}
+ if(ptab==='mem')return `<span class="pdet-k">저장 메모리 상세</span><h3>${esc(x.title)}</h3><p class="pmuted">개인화를 위해 저장된 정보입니다.</p><dl><dt>저장일</dt><dd>${fmtD(x.date)}</dd><dt>출처</dt><dd>대화에서 자동 저장</dd><dt>활용</dt><dd>저장 메모리 참조 ${onoff(prefs.memRef)}</dd></dl>${btn}`;
+ const f=FILES[i];return `<span class="pdet-k">업로드 자료 상세</span><h3>${esc(f[0])}</h3><p class="pmuted">대화에 첨부한 파일입니다.</p><div class="pfileprev">${ico('fa-regular fa-file-lines')}<b>${esc(f[0])}</b><small>${esc(f[1])}</small></div><dl><dt>업로드일</dt><dd>${fmtD(FILE_DATE[i])}</dd></dl>${btn}`}
+function pSettings(){
+ const blk=(k,t,s,on,onTxt,offTxt,note)=>`<div class="pset"><div class="pset-h"><div><b>${t}</b><p>${s}</p></div>${pToggle(k,on,t)}</div><div class="ponoff"><div><b>ON (켬)</b><p>${onTxt}</p></div><div><b>OFF (끔)</b><p>${offTxt}</p></div></div><p class="pset-n">${note}</p></div>`;
+ return `<h1 class="ph1">활용 설정</h1><p class="psub2">개인화를 위한 참조와 모델 개선을 위한 활용을 구분하여 관리합니다.</p>
+ <div class="pbox"><div class="pbox-h pgroup"><span class="pico lg">${ico('fa-solid fa-gear')}</span><div><h2>개인화</h2><p>이후 답변을 나에게 맞추기 위한 참조 설정</p></div></div>
+ ${blk('memRef','저장 메모리 참조','저장된 선호와 정보를 이후 답변에 참고합니다.',prefs.memRef,'저장 메모리의 선호와 정보를 이후 답변에 참고합니다.','이후 답변에 저장 메모리를 참고하지 않습니다.','꺼도 저장 메모리와 대화 기록은 삭제되지 않습니다. 메모리를 지우려면 저장 데이터에서 따로 삭제 요청하세요.')}
+ ${blk('chatRef','대화 기록 참조','과거 대화의 정보를 이후 답변에 참고하도록 설정합니다.',prefs.chatRef,'과거 대화의 정보를 이후 답변에 참고합니다.','이후 답변에 과거 대화의 정보를 참고하지 않습니다.','꺼도 기존 대화 기록은 삭제되지 않습니다. 대화를 지우려면 저장 데이터에서 따로 삭제 요청하세요.')}
+ <div class="pbox-f prow"><span>${ico('fa-solid fa-circle-info')}참조를 꺼도 저장된 데이터가 자동 삭제되지는 않습니다.</span><button class="plink" data-action="nav" data-page="data" data-tab="mem">저장 메모리 관리 ${ico('fa-solid fa-chevron-right')}</button></div></div>
+ <div class="pbox"><div class="pbox-h pgroup prow"><div class="pgroup"><span class="pico lg">${ico('fa-solid fa-sliders')}</span><div><h2>모델 개선</h2><p>개인화와는 별개인 데이터 활용 목적</p></div></div><span class="pbadge ${learning?'blue':''}">활용 허용 ${onoff(learning)}</span></div>
+ ${blk('model','모델 개선을 위한 데이터 활용','새 대화를 모델 개선에 활용하도록 허용할지 정합니다.',learning,'설정 이후 새 대화를 모델 개선에 활용하도록 허용합니다.','설정 이후 새 대화를 모델 개선에 활용하도록 허용하지 않습니다.','켜거나 꺼도 기존 대화와 저장 메모리는 삭제되지 않습니다. 이미 처리된 데이터의 상태를 되돌리는 기능은 아닙니다.')}
+ <div class="pbox-f">${ico('fa-solid fa-circle-info')}이 설정은 활용 허용 여부를 나타냅니다. 특정 데이터가 실제 모델 학습에 사용되었는지는 보여주지 않습니다.</div></div>
+ <p class="pnote">${ico('fa-solid fa-circle-info')}연구용 예시 설정입니다. 실제 서비스의 정책과 기능 구성은 이용 환경에 따라 다를 수 있습니다.</p>`}
+function pHistory(){
+ const F=[['all','전체'],['setting','설정 변경'],['delete','삭제 요청'],['memory','메모리 수정']];
+ const list=phist.map((h,i)=>({h,i})).filter(o=>hfilter==='all'||o.h.type===hfilter);
+ const cur=phist[hsel]&&(hfilter==='all'||phist[hsel].type===hfilter)?phist[hsel]:(list[0]&&list[0].h);
+ return `<h1 class="ph1">관리 이력</h1><p class="psub2">내가 변경한 설정과 데이터 관리 요청의 대상·범위를 확인합니다.</p>
+ <div class="pseg">${F.map(([k,n])=>`<button class="${hfilter===k?'on':''}" data-action="hfilter" data-f="${k}">${n}</button>`).join('')}</div>
+ <div class="pgrid"><div class="pbox"><div class="phtable"><div class="phth"><span>일시</span><span>행동 · 대상</span><span>상태</span></div>${list.length?list.map(({h,i})=>`<button class="phtr ${cur===h?'sel':''}" data-act="hpick" data-i="${i}"><span><b>${fmtHist(h.date).slice(6)}</b><small>${h.sample?'예시 기록':'이번 과제'}</small></span><span><b>${h.title}</b><small>${h.sub}</small></span><span>${pHistBadge(h)}</span></button>`).join(''):'<div class="pempty">해당하는 기록이 없습니다.</div>'}<div class="plfoot">${list.length}건의 기록</div></div></div>
+ <div class="pbox pdetail">${cur?`<span class="pdet-k">선택한 기록</span><h3>${cur.title}</h3>${pHistBadge(cur)}<dl><dt>행동 종류</dt><dd>${{setting:'설정 변경',delete:'삭제 요청',memory:'메모리 수정'}[cur.type]}</dd><dt>대상</dt><dd>${cur.target}</dd><dt>시점</dt><dd>${fmtHist(cur.date)}</dd><dt>적용 범위</dt><dd>${cur.scope}</dd>${cur.before?`<dt>변경 전</dt><dd>${cur.before}</dd><dt>변경 후</dt><dd>${cur.after}</dd>`:''}</dl><div class="pnotebox">연구용 예시 데이터에 반영된 변경입니다. 실제 서비스 계정의 설정이나 메모리가 변경된 것은 아닙니다.</div>`:'<div class="pdet-empty"><p>선택한 기록이 없습니다.</p></div>'}</div></div>
+ <p class="pnote">${ico('fa-solid fa-circle-info')}삭제 요청 접수는 실제 서버의 영구 삭제 완료를 의미하지 않습니다.</p>`}
+function showNextBar(){document.querySelector('#nextbar')?.remove();const n=document.createElement('div');n.id='nextbar';n.className='nextbar';n.innerHTML=`<span>${ico('fa-solid fa-circle-check')} 과제를 완료했습니다. 확인한 뒤 다음으로 넘어가 주세요.</span><button class="btn primary">확인 후 다음으로 ${ico('fa-solid fa-arrow-right')}</button>`;document.body.appendChild(n);const b=n.querySelector('button');b.focus();b.onclick=()=>{n.remove();afterTask()}}
+/* 제안 화면 클릭 처리. 반환값 true = 처리함 */
+function pClick(e){
+ const t=e.target;
+ if(t.matches('input[type=checkbox][data-check]')){const k=t.dataset.check;if(k==='all'){const items=pFiltered(ptab);const on=t.checked;items.forEach(x=>on?pchecked.add(x.key):pchecked.delete(x.key))}else{t.checked?pchecked.add(k):pchecked.delete(k)}renderTask();return true}
+ const el=t.closest('[data-act],[data-action]');if(!el)return false;
+ const act=el.dataset.act||el.dataset.action;
+ if(act==='nav'){page=el.dataset.page;if(el.dataset.tab){ptab=el.dataset.tab}renderTask();pCheckMemory();return true}
+ if(act==='ptab'){ptab=el.dataset.tab;renderTask();pCheckMemory();return true}
+ if(act==='pick'){const i=+el.dataset.i;psel[ptab]=i;renderTask();if(ptab==='file'&&task().id==='files'){if(i===FILE_TARGET){finishTask('success',true);showNextBar()}else errors++}return true}
+ if(act==='hpick'){hsel=+el.dataset.i;if(page!=='history'){page='history';hfilter='all'}renderTask();return true}
+ if(act==='hfilter'){hfilter=el.dataset.f;renderTask();return true}
+ if(act==='pref'){const k=el.dataset.k;prefs[k]=!prefs[k];const name=k==='memRef'?'저장 메모리 참조':'대화 기록 참조';pAddHist({type:'setting',title:name+' 설정 변경',sub:'이후 답변의 개인화',badge:'설정 변경됨',target:name,scope:'설정 이후 답변',before:onoff(!prefs[k]),after:onoff(prefs[k])});renderTask();return true}
+ if(act==='learning'){learning=!learning;pAddHist({type:'setting',title:'모델 개선 활용 설정 변경',sub:'설정 이후 새 대화',badge:'설정 변경됨',target:'모델 개선을 위한 데이터 활용',scope:'설정 이후 새 대화',before:onoff(!learning),after:onoff(learning)});renderTask();if(task().id==='learning'&&!learning)finishTask('success');return true}
+ if(act==='delone'||act==='delsel'){const keys=act==='delone'?[el.dataset.key]:[...pchecked].filter(k=>k.startsWith(ptab+':'));const fresh=keys.filter(k=>!preqs.has(k));if(!fresh.length)return true;
+  const label=k=>{const [kind,id]=k.split(':');if(kind==='chat')return P_CHATS[+id][0];if(kind==='file')return FILES[+id][0];const m=memItems.find(v=>v.id===id);return m?m.text:id};
+  fresh.forEach(k=>{preqs.add(k);pchecked.delete(k)});const kindName={chat:'대화 기록',mem:'저장 메모리',file:'업로드 자료'}[ptab];
+  pAddHist({type:'delete',title:kindName+' 삭제 요청',sub:fresh.length===1?label(fresh[0]):`${kindName} ${fresh.length}개`,badge:'요청 접수',target:fresh.map(label).join(', '),scope:`${kindName} ${fresh.length}개`});
+  const hit=task().id==='forget'&&fresh.includes('mem:'+MEM_TARGET);if(task().id==='forget')errors+=fresh.filter(k=>k!=='mem:'+MEM_TARGET).length;
+  renderTask();if(hit)finishTask('success',true);
+  showLayer({title:'삭제 요청이 접수되었습니다.',body:fresh.length===1?`‘${esc(label(fresh[0]))}’`:`${kindName} ${fresh.length}개`,btn:hit?`확인 후 다음으로 ${ico('fa-solid fa-arrow-right')}`:'확인',onOk:hit?afterTask:null});return true}
+ return false}
+function pCheckMemory(){if(task().id==='memory'&&page==='data'&&ptab==='mem'&&!completed){finishTask('success',true);showNextBar()}}
+function pBindInputs(){const q=document.querySelector('#pq');if(!q)return;const upd=()=>{const box=document.querySelector('#plistbox');if(box)box.innerHTML=pList()};q.oninput=()=>{pq=q.value.trim();upd()};document.querySelector('#pfrom').onchange=e=>{pfrom=e.target.value;upd()};document.querySelector('#pto').onchange=e=>{pto=e.target.value;upd()}}
 function renderTask(){const proposed=condition()==='proposal';
-app.innerHTML=`<div class="progress"><i style="width:${idx/TOTAL*100}%"></i></div><div class="taskbar"><div class="tb-screen"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="tb-task"><span class="chip">화면 ${scr()} · 과제 ${idx%PER+1}/${PER}</span><p>${task().instruction}</p></div><div class="tb-right"><span id="clock" class="clock">측정 중</span><button id="stop" class="btn sm">과제 중단</button></div></div><div id="workspace" class="workspace ${proposed?'proposed':''}"><aside class="sidebar"><strong>${proposed?'DATA CONTROL':'설정'}</strong>${(proposed?[['overview','<i class="fa-solid fa-table-cells-large"></i>대시보드'],['memory','<i class="fa-solid fa-brain"></i>저장메모리'],['purposes','<i class="fa-solid fa-sliders"></i>활용 목적·설정'],['files','<i class="fa-solid fa-folder-open"></i>업로드 자료'],['chats','<i class="fa-solid fa-comments"></i>대화기록']]:[['general','<i class="fa-solid fa-gear"></i>일반'],['모양','<i class="fa-solid fa-sun"></i>모양'],['알림','<i class="fa-solid fa-bell"></i>알림'],['보안 및 로그인','<i class="fa-solid fa-user-shield"></i>보안 및 로그인'],['계정','<i class="fa-solid fa-circle-user"></i>계정'],['보관된 채팅','<i class="fa-solid fa-box-archive"></i>보관된 채팅'],['storage','<i class="fa-solid fa-folder"></i>저장 공간'],['personalization','<i class="fa-solid fa-user-gear"></i>개인 맞춤 설정'],['사용량','<i class="fa-solid fa-gauge"></i>사용량'],['data','<i class="fa-solid fa-shield-halved"></i>데이터 관리']]).map(([id,name])=>`<button class="nav ${(page===id||(id==='storage'&&page==='storagefiles'))?'active':''}" data-action="nav" data-page="${id}">${name}</button>`).join('')}</aside><section class="content">${proposed?proposedContent():existingContent()}</section></div>`;
+app.innerHTML=`<div class="progress"><i style="width:${idx/TOTAL*100}%"></i></div><div class="taskbar"><div class="tb-screen"><span class="sq">${scr()}</span>화면 ${scr()}</div><div class="tb-task"><span class="chip">화면 ${scr()} · 과제 ${idx%PER+1}/${PER}</span><p>${task().instruction}</p></div><div class="tb-right"><span id="clock" class="clock">측정 중</span><button id="stop" class="btn sm">과제 중단</button></div></div><div id="workspace" class="workspace ${proposed?'proposed':''}">${proposed?proposedShell():`<aside class="sidebar"><strong>설정</strong>${[['general','<i class="fa-solid fa-gear"></i>일반'],['모양','<i class="fa-solid fa-sun"></i>모양'],['알림','<i class="fa-solid fa-bell"></i>알림'],['보안 및 로그인','<i class="fa-solid fa-user-shield"></i>보안 및 로그인'],['계정','<i class="fa-solid fa-circle-user"></i>계정'],['보관된 채팅','<i class="fa-solid fa-box-archive"></i>보관된 채팅'],['storage','<i class="fa-solid fa-folder"></i>저장 공간'],['personalization','<i class="fa-solid fa-user-gear"></i>개인 맞춤 설정'],['사용량','<i class="fa-solid fa-gauge"></i>사용량'],['data','<i class="fa-solid fa-shield-halved"></i>데이터 관리']].map(([id,name])=>`<button class="nav ${(page===id||(id==='storage'&&page==='storagefiles'))?'active':''}" data-action="nav" data-page="${id}">${name}</button>`).join('')}</aside><section class="content">${existingContent()}</section>`}</div>`;if(proposed)pBindInputs();
 document.querySelector('#stop').onclick=()=>showConfirm({title:'이 과제를 중단할까요?',body:'중단하면 이 과제는 ‘중단’으로 기록되고<br>다음 단계로 넘어갑니다.',ok:'중단하기',cancel:'계속하기',onOk:()=>{if(!completed)finishTask('abandoned')}});
-document.querySelector('#workspace').onclick=e=>{if(completed)return;clicks++;const b=e.target.closest('button');if(!b)return;if(b.dataset.file!==undefined){openFile(+b.dataset.file);return}const a=b.dataset.action;if(a==='nav'){page=b.dataset.page;renderTask()}if(a==='memory'){showMemory();if(task().id==='memory')finishTask('success',true)}if(a==='memlist'){showMemList();if(task().id==='memory')finishTask('success',true)}if(a==='learning'){learning=!learning;renderTask();if(task().id==='learning'&&!learning)finishTask('success')}if(a==='noop')b.title='이 메뉴의 세부 기능은 구현되어 있지 않습니다.'}}
+document.querySelector('#workspace').onclick=e=>{if(completed)return;clicks++;if(condition()==='proposal'){pClick(e);return}const b=e.target.closest('button');if(!b)return;if(b.dataset.file!==undefined){openFile(+b.dataset.file);return}const a=b.dataset.action;if(a==='nav'){page=b.dataset.page;renderTask()}if(a==='memory'){showMemory();if(task().id==='memory')finishTask('success',true)}if(a==='memlist'){showMemList();if(task().id==='memory')finishTask('success',true)}if(a==='learning'){learning=!learning;renderTask();if(task().id==='learning'&&!learning)finishTask('success')}if(a==='noop')b.title='이 메뉴의 세부 기능은 구현되어 있지 않습니다.'}}
 const fakeMemory=`<h3>개요</h3><p>사용자는 IT 기업에서 서비스 기획 업무를 담당하는 직장인입니다. 업무 자료 정리, 발표 준비, 일상적인 정보 탐색과 여행 계획을 위해 생성형 AI를 활용합니다. 복잡한 내용을 쉽게 풀어 설명하고, 필요한 정보를 항목별로 정리한 답변을 선호합니다. 최근에는 업무와 개인 일정을 함께 관리하는 방법에 관심이 있으며, 주말에는 산책이나 요리를 하며 여유롭게 시간을 보내려고 합니다.</p><h3>일과 업무</h3><p>사용자는 여러 부서의 의견을 모아 서비스 개선 방향을 정리하고, 회의 자료와 기획 문서를 작성하는 일을 합니다. 새로운 기능을 기획할 때는 사용자의 불편과 요구를 먼저 정리하고, 비슷한 서비스의 사례를 비교하는 방식을 선호합니다. 자료를 검토할 때는 핵심 내용, 판단 근거, 추가로 확인할 사항이 구분되어 있으면 이해하기 쉽다고 느낍니다.
 발표 자료는 한 화면에 내용을 많이 넣기보다 핵심 메시지를 중심으로 간결하게 구성하려고 합니다. 디자인은 흰색 배경에 파란색이나 짙은 회색을 사용하는 차분한 스타일을 좋아합니다. 생성형 AI에는 회의 메모 요약, 문장 다듬기, 비교표 작성 등을 요청하며, 제안받은 내용은 직접 검토한 뒤 업무에 반영합니다.</p><h3>학습과 관심사</h3><p>사용자는 업무에 필요한 새로운 도구와 서비스 사용법을 꾸준히 배우고 싶어 합니다. 긴 설명을 한꺼번에 읽기보다는 전체 흐름을 먼저 확인하고, 필요한 부분을 단계별로 익히는 편입니다. 처음 접하는 개념은 일상적인 사례를 함께 들어주면 이해하기 쉽다고 느낍니다.
 최근에는 데이터 시각화와 사용자 경험에 관심이 있습니다. 같은 정보라도 화면에 어떻게 배치하고 표현하느냐에 따라 이해하기 쉬운 정도가 달라진다고 생각합니다. 학습한 내용은 간단한 메모로 남기고, 실제 업무에 적용할 수 있는 예시를 따로 정리합니다.</p><h3>취미와 여가</h3><p>사용자는 산책과 사진 촬영을 즐깁니다. 사람이 지나치게 붐비는 장소보다 공원이나 강변처럼 천천히 걸을 수 있는 곳을 선호합니다. 사진은 전문 장비보다 휴대전화로 일상의 풍경을 기록하는 용도로 주로 촬영합니다. 날씨가 좋으면 카페에 들르거나 서점을 구경하며 시간을 보내기도 합니다.
@@ -245,7 +467,7 @@ function showConfirm({icon='fa-circle-exclamation',color='var(--blue)',title,bod
 function showDeleted(text,done){showLayer({title:'선택한 기억이 삭제되었습니다.',body:`‘${esc(text)}’`,btn:done?'확인 후 다음으로 <i class="fa-solid fa-arrow-right"></i>':'확인',onOk:done?()=>{modal.innerHTML='';afterTask()}:null})}
 function openFile(i){const [n,d]=FILES[i];const hit=task().id==='files'&&i===FILE_TARGET;if(task().id==='files'&&!hit)errors++;if(hit)finishTask('success',true);showLayer({icon:'fa-file-lines',color:'#254fc2',title:esc(n),body:esc(d),btn:hit?'확인 후 다음으로 <i class="fa-solid fa-arrow-right"></i>':'닫기',onOk:hit?afterTask:null})}
 function finishTask(outcome,keepOpen=false){if(completed)return;completed=true;clearInterval(timer);const end=performance.now();if(hiddenAt!==null){away+=end-hiddenAt;hiddenAt=null}lastRecord={index:idx,condition:condition(),task:task().id,startedAt:startISO,endedAt:new Date().toISOString(),elapsedMs:Math.round(end-startAt),clicks,errors,hiddenMs:Math.round(away),outcome};session.records.push(lastRecord);session.active=null;persist();if(keepOpen){const nx=document.querySelector('#memorynext');if(nx){nx.innerHTML='<div class="actions"><button id="memnext" class="btn primary">확인 후 다음으로 <i class="fa-solid fa-arrow-right"></i></button></div>';document.querySelector('#memnext').onclick=()=>{modal.innerHTML='';afterTask()}}document.querySelector('#clock').textContent='측정 종료';document.querySelector('#stop').disabled=true}else afterTask()}
-function afterTask(){window.scrollTo(0,0);stage='taskdone';
+function afterTask(){window.scrollTo(0,0);stage='taskdone';document.querySelector('#nextbar')?.remove();
 app.innerHTML=`<main class="page"><section class="panel"><span class="badge">${lastRecord.outcome==='success'?'과제 완료':'과제 중단'}</span><h2 class="ptitle">수행 경험을 알려주세요</h2><p class="psub">화면 ${scr()} · TASK ${idx+1}/${TOTAL} · ${task().title}</p><form id="taskform"><p class="q">이 과제를 수행하는 것은 얼마나 쉬웠나요?</p>${scale('ease',7,'매우 어려움','매우 쉬움')}<label class="q" for="comment">어렵거나 혼란스러운 부분이 있었다면 적어주세요. <small>(선택)</small></label><textarea id="comment" maxlength="2000"></textarea><div class="btns left"><button class="btn primary">다음으로 <i class="fa-solid fa-arrow-right"></i></button></div></form></section></main>`;
 document.querySelector('#taskform').onsubmit=e=>{e.preventDefault();lastRecord.ease=Number(new FormData(e.target).get('ease'));lastRecord.comment=document.querySelector('#comment').value;persist();send('task',lastRecord);if(idx%PER===PER-1)survey();else{idx++;brief()}}}
 function scale(name,n,left,right){return `<div class="scale">${Array.from({length:n},(_,i)=>`<label><input required type="radio" name="${name}" value="${i+1}"><span>${i+1}</span></label>`).join('')}</div><div class="under"><span>${left}</span><span>${right}</span></div>`}
