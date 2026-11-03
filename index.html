@@ -201,7 +201,7 @@ function condition(){return session.order[Math.floor(idx/PER)]}function task(){r
 
 function intro(){window.scrollTo(0,0);stage='intro';const old=saved();
 const storeNote=ENDPOINT?'응답은 연구용 데이터 시트로 전송됩니다.':'검토용: 응답은 이 브라우저에만 저장됩니다.';
-app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="intro-copy"><p class="intro-eyebrow">사용자 경험 비교 연구</p><h1>내 데이터 관리,<br>어떻게 설정하시나요?</h1><p class="intro-description">두 가지 데이터 설정 화면을 사용하고, <br>정보를 찾고 설정하는 경험을 알려주세요.</p>
+app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="intro-copy"><p class="intro-eyebrow">사용자 경험 비교 연구</p><h1>내 데이터 관리,<br>어떻게 설정하시나요?</h1><p class="intro-description">두 가지 데이터 설정 화면을 사용하고, 정보를 찾고 설정하는 경험을 알려주세요.</p>
 <ol class="stepper"><li><span>1</span>안내·동의</li><li><span>2</span>화면별 과제</li><li><span>3</span>사용 후 평가</li></ol>
 <ul class="facts"><li><i class="fa-solid fa-layer-group"></i>총 8개 과제</li><li><i class="fa-regular fa-clipboard"></i>화면별 평가 2회</li><li><i class="fa-solid fa-desktop"></i>PC 사용 권장</li></ul>
 <div class="pre-card"><h3>참여 전 확인해 주세요</h3><div class="pre-row"><span class="pre-chip"><span class="sq">A</span>화면 A</span><i class="fa-solid fa-arrow-right"></i><span>과제 4개 · 사용 후 평가</span></div><div class="pre-row"><span class="pre-chip"><span class="sq">B</span>화면 B</span><i class="fa-solid fa-arrow-right"></i><span>과제 4개 · 사용 후 평가</span></div><p class="first">두 화면 중 하나는 현재 생성형 AI 서비스에서 쓰이는 실제 설정 화면을 재현한 것이고, 다른 하나는 이 연구를 위해 새로 설계한 화면입니다. 어느 쪽인지는 알려드리지 않으니, 사용해 본 경험 그대로 평가해 주세요.</p><p>모든 내용은 테스트용 가상 데이터입니다.</p></div>
