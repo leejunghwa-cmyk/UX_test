@@ -100,42 +100,57 @@ table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}td,th{p
 .layerbox h3{margin:14px 0 6px;font-size:19px}.layerbox p{margin:0;color:#555;font-size:14px;line-height:1.5}.layerbox .btn{width:100%;margin-top:22px}
 
 /* 시작 화면 */
-.intro-wrap{width:calc(100% - 80px);max-width:1270px;min-height:calc(100svh - 60px);margin:0 auto;padding:0 29px 92px 0;display:flex;align-items:center}
-.intro-hero{width:100%;display:grid;grid-template-columns:minmax(0,586px) minmax(0,531px);gap:clamp(40px,8.61vw,124px);align-items:center}
-.intro-copy{display:flex;flex-direction:column;align-items:flex-start;padding-top:1px}
-.intro-copy h1{font-size:44px;font-weight:700;line-height:1.28;letter-spacing:-.045em;margin:0 0 22px}
-.intro-copy .intro-description{font-size:18px;line-height:1.5;margin:0;white-space:nowrap;letter-spacing:-.045em}
-.intro-copy .steps{display:flex;flex-wrap:wrap;gap:8px;margin:56px 0 12px}
-.intro-copy .steps span{font-size:16px;font-weight:600;line-height:22px;background:#fff;border:1px solid #000;border-radius:6px;padding:8px 14px;letter-spacing:-.04em}
-.intro-copy .intro-summary{font-size:16px;line-height:1.5;margin:0;letter-spacing:-.03em}
-.intro-copy .hint{margin-top:auto;width:100%;text-align:left;word-break:keep-all;padding:24px 0 0;color:#666;font-size:13px}
-.ab-guide{width:100%;margin-top:28px;background:#fff;border-radius:10px;padding:20px 22px}
-.ab-row{display:flex;align-items:center;gap:14px}.ab-row+.ab-row{margin-top:12px}
-.ab-row .sq{width:40px;height:40px;font-size:22px;flex:0 0 40px}
-.ab-row b{display:block;font-size:16px;letter-spacing:-.03em}.ab-row span:not(.sq){display:block;font-size:14px;color:#555;letter-spacing:-.03em}
-.ab-guide p{margin:16px 0 0;padding-top:14px;border-top:1px solid #e5e5e5;font-size:14px;line-height:1.6;color:#333;letter-spacing:-.03em;word-break:keep-all}
-.intro-card{background:#fff;border-radius:10px;padding:27px 32px 29px;min-width:0}
-.intro-card h2{font-size:30px;line-height:40px;letter-spacing:-.04em;margin:0 0 18px;font-weight:700}
-.intro-card .code-label{display:block;font-size:16px;line-height:24px;margin:0 0 20px;font-weight:600}
-.intro-card input[type=text]{width:100%;height:48px;border:1px solid var(--line);border-radius:6px;padding:12px 16px;font-size:16px}
-.intro-card input::placeholder{color:#666;opacity:1}
-.intro-card .code-hint{display:block;margin-top:8px;color:var(--muted);font-size:13px;line-height:20px}
-.intro-card .consent-label{display:flex;align-items:flex-start;gap:9px;font-size:15px;font-weight:600;line-height:22px;letter-spacing:-.045em;margin:20px 0}
-.intro-card input[type=checkbox]{appearance:none;flex:0 0 21px;width:21px;height:21px;margin:0;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:pointer}
+body:has(.intro-wrap){background:#f3f4f6}
+.intro-wrap{width:100%;max-width:1240px;min-height:calc(100svh - 60px);margin:0 auto;padding:56px 40px 64px;display:flex;align-items:center}
+.intro-hero{width:100%;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:center}
+.intro-copy{min-width:0}
+.intro-eyebrow{margin:0 0 14px;color:var(--blue);font-size:17px;font-weight:700;letter-spacing:-.02em}
+.intro-copy h1{font-size:46px;font-weight:800;line-height:1.3;letter-spacing:-.045em;margin:0 0 20px}
+.intro-description{font-size:21px;line-height:1.6;color:#555;margin:0;letter-spacing:-.04em}
+.stepper{list-style:none;display:flex;margin:40px 0 0;padding:0;max-width:600px}
+.stepper li{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:16px;font-weight:700;letter-spacing:-.03em}
+.stepper li span{width:38px;height:38px;border-radius:50%;border:1.5px solid #000;background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;position:relative;z-index:1}
+.stepper li+li::before{content:'';position:absolute;top:19px;right:calc(50% + 28px);left:calc(-50% + 28px);height:1px;background:#bdbdbd}
+.facts{list-style:none;display:flex;flex-wrap:wrap;align-items:center;row-gap:10px;margin:34px 0 0;padding:0;font-size:16px;font-weight:500;letter-spacing:-.03em}
+.facts li{display:flex;align-items:center;gap:10px}
+.facts li+li{margin-left:20px;padding-left:20px;border-left:1px solid #c4c4c4}
+.facts i{font-size:18px;color:#222}
+.pre-card{margin-top:24px;background:#fff;border-radius:14px;padding:24px 30px 22px}
+.pre-card h3{margin:0 0 16px;font-size:20px;letter-spacing:-.04em}
+.pre-row{display:flex;align-items:center;gap:16px;font-size:16px;color:#333;letter-spacing:-.03em}.pre-row+.pre-row{margin-top:10px}
+.pre-chip{display:inline-flex;align-items:center;gap:8px;background:#f0f1f3;border-radius:8px;padding:6px 14px 6px 6px;font-weight:700;color:#000}
+.pre-chip .sq{width:26px;height:26px;font-size:15px;border-radius:6px}
+.pre-row>i{color:#333;font-size:15px}
+.pre-card p{margin:0;font-size:15px;line-height:1.65;color:#444;letter-spacing:-.03em;word-break:keep-all}
+.pre-card p.first{margin-top:18px;padding-top:16px;border-top:1px solid #e3e3e3}
+.intro-foot{margin:22px 0 0;font-size:14px;color:#666;letter-spacing:-.02em}
+.intro-card{background:#fff;border:1px solid #dcdcdc;border-radius:16px;padding:34px 40px 30px;min-width:0}
+.intro-card h2{font-size:34px;line-height:1.3;letter-spacing:-.045em;margin:0;font-weight:800}
+.card-sub{margin:8px 0 26px;font-size:16px;color:#555;letter-spacing:-.03em}
+.intro-card .code-label{display:block;font-size:17px;font-weight:700;margin:0 0 10px}
+.intro-card input[type=text]{width:100%;height:54px;border:1px solid var(--line);border-radius:8px;padding:12px 18px;font-size:17px}
+.intro-card input::placeholder{color:#999;opacity:1}
+.rec{margin-top:26px;padding-bottom:22px;border-bottom:1px solid #e3e3e3}
+.rec b{display:block;font-size:16px;margin-bottom:6px}.rec p{margin:0;font-size:15px;line-height:1.6;color:#444;word-break:keep-all;letter-spacing:-.03em}.rec small{display:block;margin-top:6px;color:#888;font-size:13px}
+.intro-card .consent-label{display:flex;align-items:flex-start;gap:14px;margin:22px 0 26px;cursor:pointer}
+.intro-card .consent-label b{display:block;font-size:17px;line-height:1.5;letter-spacing:-.04em}
+.intro-card .consent-label small{display:block;word-break:keep-all;margin-top:4px;font-size:14px;color:#888;letter-spacing:-.02em}
+.intro-card input[type=checkbox]{appearance:none;flex:0 0 26px;width:26px;height:26px;margin:2px 0 0;border:1.5px solid var(--line);border-radius:6px;background:#fff;cursor:pointer}
 .intro-card input[type=checkbox]:checked{appearance:auto;accent-color:var(--blue)}
-.intro-card .record-note{font-size:13px;line-height:18px;color:var(--muted);margin:0 0 21px;letter-spacing:-.025em}
-.intro-card .btns{margin:0;justify-content:flex-start;gap:22px}
-.intro-card .error{margin-top:12px}
+.btn.wide{width:100%;height:60px;font-size:18px;border-radius:8px}
+.textlink{display:block;margin:18px auto 0;border:0;background:none;padding:4px;color:#555;font-size:16px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.textlink:hover{color:#000}
+.intro-card .error{margin-top:12px;text-align:center}
 
-@media(min-width:761px) and (max-width:1250px){.intro-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px}.intro-copy .intro-description{white-space:normal}.intro-copy h1{font-size:38px}.intro-copy .steps{margin-top:36px}.intro-copy .steps span{font-size:14px;padding:8px}.intro-card .btns{gap:12px}.intro-card .btn{min-width:0}}
+@media(min-width:761px) and (max-width:1250px){.intro-wrap{padding:48px 28px}.intro-hero{gap:36px}.intro-copy h1{font-size:38px}.intro-description{font-size:18px}.stepper li{font-size:14px}.facts{font-size:14px}.facts li+li{margin-left:14px;padding-left:14px}.pre-card{padding:22px}.intro-card{padding:28px}.intro-card h2{font-size:30px}}
 @media(max-width:760px){
 .top{padding:0 20px;font-size:12px}
-.intro-wrap{width:100%;padding:44px 20px}.intro-hero{grid-template-columns:1fr;gap:32px}.intro-copy h1{font-size:34px}.intro-copy .intro-description{white-space:normal;font-size:16px}.intro-copy .steps{margin-top:28px;gap:6px}.intro-copy .steps span{font-size:13px;padding:7px 10px}.intro-copy .intro-summary{font-size:15px}.intro-copy .hint{margin-top:20px}.intro-card{padding:26px 24px}.intro-card h2{font-size:27px}.intro-card .btns{gap:12px}.intro-card .btn{min-width:0;flex:1;font-size:14px}
+.intro-wrap{padding:36px 20px}.intro-hero{grid-template-columns:1fr;gap:32px}.intro-copy h1{font-size:32px}.intro-description{font-size:17px}.intro-description br{display:none}.stepper li{font-size:13px}.facts{font-size:14px}.facts li+li{margin-left:12px;padding-left:12px}.pre-card{padding:20px}.pre-row{flex-wrap:wrap;gap:8px 12px}.intro-card{padding:26px 22px}.intro-card h2{font-size:28px}
 .page{padding:28px 16px 12px}.panel,.brief{padding:28px 22px}.brief .badge{margin-top:32px}.brief-title{font-size:27px}.brief-inst{font-size:17px}.brief-desc{font-size:14px;margin-top:40px}.brief-desc br{display:none}.btns{margin-top:36px}.btn{flex:1;min-width:0;font-size:14px}.ptitle{font-size:24px}
 .taskbar{padding:14px}.tb-screen{position:static;transform:none;justify-content:center;margin-bottom:8px}.tb-right{position:static;transform:none;justify-content:center;margin-top:10px}.tb-right .btn{flex:0 0 auto}.taskbar p{font-size:17px}.workspace{grid-template-columns:150px 1fr}.content{padding:25px 16px}.cards{grid-template-columns:1fr}.scale{gap:4px}
 }
 </style></head>
-<body><header class="top"><div>비교 테스트 · v0.5</div><div>UX 디자인 연구</div></header><div id="app"></div><div id="modal"></div><footer class="footer">가상 데이터로 진행하는 연구용 프로토타입입니다. 실제 ChatGPT 계정에는 영향을 주지 않습니다.</footer>
+<body><header class="top"><div>AI 데이터 관리 UX 비교 테스트</div><div>UX 디자인 연구</div></header><div id="app"></div><div id="modal"></div><footer class="footer">가상 데이터로 진행하는 연구용 프로토타입입니다. 실제 ChatGPT 계정에는 영향을 주지 않습니다.</footer>
 <script>
 'use strict';
 /* ───────── 연구 설정 ─────────
@@ -185,8 +200,16 @@ function scr(i=idx){return Math.floor(i/PER)===0?'A':'B'}
 function condition(){return session.order[Math.floor(idx/PER)]}function task(){return tasks[idx%PER]}
 
 function intro(){window.scrollTo(0,0);stage='intro';const old=saved();
-const storeNote=ENDPOINT?'응답은 연구용 데이터 시트로 전송됩니다. 참여자 코드 외의 개인 식별 정보는 수집하지 않습니다.':'현재는 동작 검토용 초안입니다. 응답은 이 브라우저에만 저장되며 연구자에게 자동 전송되지 않습니다.<br>본 조사 전 문항·동의문·저장 방식을 확정합니다.';
-app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="intro-copy"><h1>내 데이터 관리,<br>어떻게 설정하시나요?</h1><p class="intro-description">두 가지 데이터 설정 화면을 사용해 보고, 정보를 찾고 설정하는 경험을 평가합니다.</p><div class="steps"><span>01 안내·동의</span><span>02 화면별 과제</span><span>03 사용 후 평가</span></div><p class="intro-summary">화면 A·B 과제 4개씩, 총 8개 / 화면별 평가 1회씩, 총 2회 / PC 사용 권장</p><div class="ab-guide"><div class="ab-row"><span class="sq">A</span><div><b>화면 A</b><span>처음 사용하는 데이터 설정 화면</span></div></div><div class="ab-row"><span class="sq">B</span><div><b>화면 B</b><span>두 번째로 사용하는 데이터 설정 화면</span></div></div><p>두 화면 중 하나는 현재 생성형 AI 서비스에서 쓰이는 <b>실제 설정 화면</b>을 재현한 것이고, 다른 하나는 이 연구를 위해 <b>새로 설계한 화면</b>입니다. 어느 쪽인지는 알려드리지 않으니, 사용해 본 경험 그대로 평가해 주세요.</p></div><div class="hint">${storeNote}</div></section><section class="intro-card"><h2>테스트 시작</h2><label class="code-label" for="code">참여자 코드</label><input id="code" type="text" maxlength="30" placeholder="예 : P01" autocomplete="off" aria-describedby="code-hint"><small id="code-hint" class="code-hint">안내받은 코드를 입력해 주세요.</small><label class="consent-label"><input id="consent" type="checkbox"><span>안내 내용을 확인했으며 자발적으로 참여합니다.</span></label><p class="record-note">기록 항목: 참여자 코드, 화면 제시 순서, 과제 시간, 클릭 수, 완료 여부, 탭 이탈 시간, 평가 응답. 언제든 중단할 수 있습니다. 녹화는 하지 않습니다.</p><div class="btns"><button class="btn primary" id="begin">동의하고 시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="btn" id="resume">이전 기록 보기</button></div><div id="error" class="error" role="alert"></div></section></div></main>`;
+const storeNote=ENDPOINT?'응답은 연구용 데이터 시트로 전송됩니다.':'검토용: 응답은 이 브라우저에만 저장됩니다.';
+app.innerHTML=`<main class="intro-wrap"><div class="intro-hero"><section class="intro-copy"><p class="intro-eyebrow">사용자 경험 비교 연구</p><h1>내 데이터 관리,<br>어떻게 설정하시나요?</h1><p class="intro-description">두 가지 데이터 설정 화면을 사용하고, <br>정보를 찾고 설정하는 경험을 알려주세요.</p>
+<ol class="stepper"><li><span>1</span>안내·동의</li><li><span>2</span>화면별 과제</li><li><span>3</span>사용 후 평가</li></ol>
+<ul class="facts"><li><i class="fa-solid fa-layer-group"></i>총 8개 과제</li><li><i class="fa-regular fa-clipboard"></i>화면별 평가 2회</li><li><i class="fa-solid fa-desktop"></i>PC 사용 권장</li></ul>
+<div class="pre-card"><h3>참여 전 확인해 주세요</h3><div class="pre-row"><span class="pre-chip"><span class="sq">A</span>화면 A</span><i class="fa-solid fa-arrow-right"></i><span>과제 4개 · 사용 후 평가</span></div><div class="pre-row"><span class="pre-chip"><span class="sq">B</span>화면 B</span><i class="fa-solid fa-arrow-right"></i><span>과제 4개 · 사용 후 평가</span></div><p class="first">두 화면 중 하나는 현재 생성형 AI 서비스에서 쓰이는 실제 설정 화면을 재현한 것이고, 다른 하나는 이 연구를 위해 새로 설계한 화면입니다. 어느 쪽인지는 알려드리지 않으니, 사용해 본 경험 그대로 평가해 주세요.</p><p>모든 내용은 테스트용 가상 데이터입니다.</p></div>
+<p class="intro-foot">실제 계정이나 데이터에는 영향을 주지 않습니다.</p></section>
+<section class="intro-card"><h2>테스트 시작</h2><p class="card-sub">안내받은 참여자 코드를 입력해 주세요.</p><label class="code-label" for="code">참여자 코드</label><input id="code" type="text" maxlength="30" placeholder="예: P01" autocomplete="off">
+<div class="rec"><b>기록되는 정보</b><p>참여자 코드, 화면 제시 순서, 과제 시간, 클릭 수, 완료 여부, 탭 이탈 시간, 평가 응답</p><small>${storeNote}</small></div>
+<label class="consent-label"><input id="consent" type="checkbox"><span><b>안내 내용을 확인했으며<br>자발적으로 참여합니다.</b><small>언제든 참여를 중단할 수 있습니다. 화면 녹화는 하지 않습니다.</small></span></label>
+<button class="btn primary wide" id="begin">동의하고 시작하기 <i class="fa-solid fa-arrow-right"></i></button><button class="textlink" id="resume">이전 기록 보기</button><div id="error" class="error" role="alert"></div></section></div></main>`;
 document.querySelector('#begin').onclick=()=>{const code=document.querySelector('#code').value.trim();if(!code||!document.querySelector('#consent').checked){document.querySelector('#error').textContent='참여자 코드와 참여 동의를 확인해 주세요.';return}if(old&&!confirm('이 브라우저의 이전 기록을 새 세션으로 대체합니다. 계속할까요?'))return;const studyType=assignType(code);session={version:VERSION,id:typeof crypto.randomUUID==='function'?crypto.randomUUID():'session-'+Date.now()+'-'+Array.from(crypto.getRandomValues(new Uint32Array(2))).join('-'),code,studyType,order:[...orders[studyType]],createdAt:new Date().toISOString(),userAgent:navigator.userAgent,screen:innerWidth+'x'+innerHeight,records:[],surveys:[],outbox:[...((old&&old.outbox)||[])],active:null,status:'in_progress',storage:ENDPOINT?'remote_sheet+browser':'browser_local_only'};idx=0;persist();send('start',{createdAt:session.createdAt,userAgent:session.userAgent,screen:session.screen});brief()};
 document.querySelector('#resume').onclick=()=>{if(!old){document.querySelector('#error').textContent='이 브라우저에 저장된 이전 기록이 없습니다.';return}session=old;results()}}
 
